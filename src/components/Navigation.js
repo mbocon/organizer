@@ -13,7 +13,7 @@ export default function Navigation() {
 					<Nav.Link href='/calculator'>Calculator</Nav.Link>
 					<Nav.Link href='/budget'>Budget</Nav.Link>
 					<Nav.Link href='/todo'>To-do</Nav.Link>
-					<Nav.Link href='/relaxation'>Relaxation</Nav.Link>
+					<Nav.Link href='/timer'>Timer</Nav.Link>
 					<Nav.Link href='/journal'>Journal</Nav.Link>
 					<Nav.Link href='/workouts'>Workouts</Nav.Link>
 					<Nav.Link href='/diet'>Diet</Nav.Link>

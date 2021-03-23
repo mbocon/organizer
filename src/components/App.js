@@ -4,7 +4,7 @@ import Home from './Home';
 import Calculator from './Calculator';
 import Budget from './Budget';
 import Todo from './Todo';
-import Relaxation from './Relaxation';
+import Timer from './Timer';
 import Journal from './Journal';
 import Workouts from './Workouts';
 import Diet from './Diet';
@@ -23,7 +23,7 @@ export default function App() {
 				{href === 'http://localhost:3000/calculator' ? <Calculator /> : null}
 				{href === 'http://localhost:3000/budget' ? <Budget /> : null}
 				{href === 'http://localhost:3000/todo' ? <Todo /> : null}
-				{href === 'http://localhost:3000/relaxation' ? <Relaxation /> : null}
+				{href === 'http://localhost:3000/timer' ? <Timer /> : null}
 				{href === 'http://localhost:3000/journal' ? <Journal /> : null}
 				{href === 'http://localhost:3000/workouts' ? <Workouts /> : null}
 				{href === 'http://localhost:3000/diet' ? <Diet /> : null}
