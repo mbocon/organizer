@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 export default function Navigation() {
 	return (
 		<Navbar expand='lg'>
-			<Navbar.Brand href='/home'>Organizer</Navbar.Brand>
+			<Navbar.Brand href='/'>Organizer</Navbar.Brand>
 			<Navbar.Toggle aria-controls='basic-navbar-nav'/>
 			<Navbar.Collapse id='basic-navbar-nav'>
 				<Nav className='ml-auto'>

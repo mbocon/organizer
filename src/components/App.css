@@ -37,7 +37,7 @@ header {
 
 main {
 	flex-grow: 1;
-	background-color: var(--secondary-white);
+	background-color: var(--main-cyan);
 	color: var(--main-grey);
 	font-size: 1.1rem;
 }

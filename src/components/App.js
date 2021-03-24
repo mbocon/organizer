@@ -1,5 +1,6 @@
 import './App.css';
 import Navigation from './Navigation';
+import Landing from './Landing';
 import Home from './Home';
 import Calculator from './Calculator';
 import Budget from './Budget';
@@ -19,6 +20,7 @@ export default function App() {
 				<Navigation />
 			</header>
 			<main>
+				{href === 'http://localhost:3000/' ? <Landing /> : null}
 				{href === 'http://localhost:3000/home' ? <Home /> : null}
 				{href === 'http://localhost:3000/calculator' ? <Calculator /> : null}
 				{href === 'http://localhost:3000/budget' ? <Budget /> : null}
