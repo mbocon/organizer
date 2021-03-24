@@ -1,6 +1,8 @@
-/************************************/
+/******************************************************************************************/
+/******************************************************************************************/
 /* UNIVERSAL */
-/************************************/
+/******************************************************************************************/
+/******************************************************************************************/
 
 :root {
 	--main-blue: #007bff;
@@ -11,7 +13,7 @@
 	--main-cyan: #e7f8f8;
 	--main-white: #fff;
 	--secondary-white: #f5f5f5;
-	--main-orange:  #e68a12;
+	--main-orange: #e68a12;
 	--main-grey: #2a2b2d;
 }
 
@@ -22,7 +24,7 @@
 body {
 	font-family: 'Courier New', Courier, monospace !important;
 	font-weight: bold !important;
-	letter-spacing: .5px;
+	letter-spacing: 0.5px;
 }
 
 .App {
@@ -40,6 +42,7 @@ main {
 	background-color: var(--main-cyan);
 	color: var(--main-grey);
 	font-size: 1.1rem;
+	overflow: scroll;
 }
 
 :is(.home, .calculator-page, .budget, .todo, .timer, .journal, .workouts, .diet) {
@@ -50,9 +53,11 @@ main {
 	background-color: var(--main-cyan);
 }
 
-/************************************/
+/******************************************************************************************/
+/******************************************************************************************/
 /* NAVBAR */
-/************************************/
+/******************************************************************************************/
+/******************************************************************************************/
 
 .navbar a {
 	color: var(--third-blue) !important;
@@ -71,9 +76,11 @@ button.navbar-toggler {
 	background-image: url('https://mdbcdn.b-cdn.net/img/svg/hamburger2.svg?color=fff') !important;
 }
 
-/************************************/
+/******************************************************************************************/
+/******************************************************************************************/
 /* HOME */
-/************************************/
+/******************************************************************************************/
+/******************************************************************************************/
 
 .home-intro {
 	text-align: center;
@@ -119,14 +126,20 @@ button.navbar-toggler {
 	align-items: center;
 }
 
-/************************************/
+/******************************************************************************************/
+/******************************************************************************************/
 /* CALCULATOR */
-/************************************/
+/******************************************************************************************/
+/******************************************************************************************/
+
+.calculator-page {
+	align-items: flex-start;
+}
 
 .Calculator {
-	height: 75%;
+	height: 60%;
 	display: block;
-	width: 90%;
+	width: 25%;
 	margin: 1rem;
 }
 
@@ -134,7 +147,7 @@ button.navbar-toggler {
 	color: var(--main-white);
 	width: 25%;
 	height: 20%;
-	font-size: 5vmin;
+	font-size: 4vmin;
 	border-color: black;
 }
 
@@ -147,17 +160,17 @@ button.navbar-toggler {
 }
 
 .BlackButton {
-	background-color: var(--dark-blue)
+	background-color: var(--dark-blue);
 	/* #434343; */
 }
 
 .GrayButton {
-	background-color: var(--secondary-blue)
-	 /* #5d5e5e; */
+	background-color: var(--secondary-blue);
+	/* #5d5e5e; */
 }
 
 .OrangeButton {
-	background-color:  var(--main-orange)
+	background-color: var(--main-orange);
 }
 
 .LargeButton {
@@ -186,9 +199,64 @@ button.navbar-toggler {
 	align-items: center;
 }
 
-/************************************/
+/******************************************************************************************/
+/******************************************************************************************/
+/* BUDGET */
+/******************************************************************************************/
+/******************************************************************************************/
+
+.budget {
+	margin: 1rem;
+}
+
+.budget-dropdown {
+	margin-top: 0rem!important;
+	margin-bottom: 1rem;
+}
+
+.budget-form-area {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.budget-form input {
+	width: fit-content;
+}
+
+.budget-cancel-btn {
+	margin: .5rem 1.7rem 1rem 0rem;
+	width: fit-content;
+}
+
+:is(#income, #expense, #debt, #savings) {
+	width: 40%;
+	padding: .2rem;
+	margin-right: 5px;
+}
+
+.budget-h3 {
+	box-shadow: 0px 3px 2px -2px var(--main-blue);
+	margin-bottom: 1rem;
+}
+.responsiveTable {
+	background-color: var(--main-cyan);
+	text-align: center;
+}
+.th  {
+	/* border-bottom: 1px solid red; */
+	font-style: oblique;
+}
+
+.td {
+	font-weight: 500;
+}
+
+/******************************************************************************************/
+/******************************************************************************************/
 /* FOOTER */
-/************************************/
+/******************************************************************************************/
+/******************************************************************************************/
 
 .footer {
 	width: 100vw;
@@ -202,4 +270,77 @@ button.navbar-toggler {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+/******************************************************************************************/
+/******************************************************************************************/
+/* MEDIA QUERIES */
+/******************************************************************************************/
+/******************************************************************************************/
+
+
+
+@media (min-width: 601px) and (max-width: 800px) {
+	main {
+		font-size: 1rem!important;
+	}
+	#dropdown-basic {
+		margin-top: 1rem;
+		font-size: .8rem;
+	}
+	.dropdown-menu {
+		font-size: .8rem!important;
+	}
+	.btn{
+		font-size: .8rem!important;
+	}
+	.home-intro-h2{
+		font-size: 1.5rem;
+	}
+	.home-info {
+		margin-top: 1rem;
+	}
+	.Calculator {
+		width: 50%;
+	}
+	.Button {
+		font-size: 3vmin!important;
+	}
+	.Display {
+		font-size: 6vmin!important;
+	}
+}
+
+@media (min-width: 250px) and (max-width: 600px) {
+	main {
+		font-size: .8rem!important;
+	}
+	#dropdown-basic {
+		margin-top: 1rem;
+		font-size: .8rem;
+	}
+	.dropdown-menu {
+		font-size: .7rem!important;
+	}
+	.btn{
+		font-size: .7rem!important;
+	}
+	.home-intro-h2{
+		font-size: 1.25rem;
+	}
+	.home-info {
+		margin-top: 1rem;
+	}
+	.Calculator {
+		width: 75%!important;
+		margin: 1rem auto;
+		height: 50%;
+	}
+	.Button {
+		/* color: rgb(157, 0, 255)!important; */
+		/* font-size: 2vmin!important; */
+	}
+	.Display {
+		font-size: 5vmin!important;
+	}
 }
