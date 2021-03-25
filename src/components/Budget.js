@@ -1,94 +1,54 @@
-import { useState } from 'react';
-import { Dropdown, Button } from 'react-bootstrap';
+import { useState, useEffect } from 'react';
+import { Dropdown } from 'react-bootstrap';
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
+import IncomeForm from './Forms/IncomeForm';
+import ExpenseForm from './Forms/ExpenseForm';
+import DebtForm from './Forms/DebtForm';
+import SavingsForm from './Forms/SavingsForm';
 
-// <form action='' method='get' className='form-example'>
-// 	<label for='income'>Enter income:</label>
-// 	<input type='text' name='income' id='income' required />
-// 	<button>Submit</button>
-// </form>
+export default function Budget() {
+	const [displayForm, setDisplayForm] = useState(false);
+	const [formType, setFormType] = useState('');
 
-export default function Budget(props) {
-	console.log(props, 'are budget page props');
-
-	const [formInfo, setFormInfo] = useState('');
-
-	function displayForm(e) {
-		e.preventDefault();
-		switch (e.target.text) {
-			case 'Add an income source':
-				setFormInfo(
-					<form action='submit' method='post' className='budget-form'>
-						<label htmlFor='income'>Enter income:</label>
-						<input type='text' name='income' id='income' required />
-						<Button className='btn btn-success budget-form-submit-btn'>Submit</Button>
-					</form>,
-				);
-				break;
-			case 'Add an expense':
-				setFormInfo(
-					<form action='submit' method='post' className='budget-form'>
-						<label htmlFor='expense'>Enter expense:</label>
-						<input type='text' name='expense' id='expense' required />
-						<Button className='btn btn-success budget-form-submit-btn'>Submit</Button>
-					</form>,
-				);
-				break;
-			case 'Add a debt':
-				setFormInfo(
-					<form action='submit' method='post' className='budget-form'>
-						<label htmlFor='debt'>Enter debt:</label>
-						<input type='text' name='debt' id='debt' required />
-						<Button className='btn btn-success budget-form-submit-btn'>Submit</Button>
-					</form>,
-				);
-				break;
-			case 'Add savings':
-				setFormInfo(
-					<form action='submit' method='post' className='budget-form'>
-						<label htmlFor='savings'>Enter savings:</label>
-						<input type='text' name='savings' id='savings' required />
-						<Button className='btn btn-success budget-form-submit-btn'>Submit</Button>
-					</form>,
-				);
-				break;
-			default:
-				setFormInfo('');
-		}
-	}
-
-	function clearScreen() {
-		setFormInfo('');
-	}
+	const renderForm = e => {
+		setFormType(e.target.id);
+		setDisplayForm(!displayForm);
+	};
 
 	return (
 		<div className='budget'>
 			<h3 className='budget-h3'>*USERNAME's Budget</h3>
 			<div className='budget-input'>
-				{formInfo !== '' ? null : (
+				{displayForm === false ? (
 					<Dropdown>
 						<Dropdown.Toggle variant='primary' id='dropdown-basic' className='budget-dropdown'>
 							Enter budget item
 						</Dropdown.Toggle>
 						<Dropdown.Menu>
-							<Dropdown.Item onClick={event => displayForm(event)}>Add an income source</Dropdown.Item>
-							<Dropdown.Item onClick={event => displayForm(event)}>Add an expense</Dropdown.Item>
-							<Dropdown.Item onClick={event => displayForm(event)}>Add a debt</Dropdown.Item>
-							<Dropdown.Item onClick={event => displayForm(event)}>Add savings</Dropdown.Item>
+							<Dropdown.Item id='income' onClick={event => renderForm(event)}>
+								Add an income source
+							</Dropdown.Item>
+							<Dropdown.Item id='expense' onClick={event => renderForm(event)}>
+								Add an expense
+							</Dropdown.Item>
+							<Dropdown.Item id='debt' onClick={event => renderForm(event)}>
+								Add a debt
+							</Dropdown.Item>
+							<Dropdown.Item id='savings' onClick={event => renderForm(event)}>
+								Add savings
+							</Dropdown.Item>
 						</Dropdown.Menu>
 					</Dropdown>
-				)}
-				{formInfo === '' ? null : (
-					<div className='budget-form-area'>
-						<div className='budget-form'>{formInfo}</div>
-						<div className='budget-cancel-btn-area'>
-							<Button className='btn btn-danger budget-cancel-btn' onClick={event => clearScreen(event)}>
-								Cancel
-							</Button>
-						</div>
+				) : null}
+				{displayForm === true ? (
+					<div className='budget-form'>
+						{formType === 'income' ? <IncomeForm displayForm={displayForm} setDisplayForm={setDisplayForm} /> : null}
+						{formType === 'expense' ? <ExpenseForm displayForm={displayForm} setDisplayForm={setDisplayForm} /> : null}
+						{formType === 'debt' ? <DebtForm displayForm={displayForm} setDisplayForm={setDisplayForm} /> : null}
+						{formType === 'savings' ? <SavingsForm displayForm={displayForm} setDisplayForm={setDisplayForm} /> : null}
 					</div>
-				)}
+				) : null}
 			</div>
 			<Table>
 				<Thead>
@@ -97,7 +57,7 @@ export default function Budget(props) {
 						<Th className='th'>Total Expenses</Th>
 						<Th className='th'>Total Debt</Th>
 						<Th className='th'>Total Savings</Th>
-						<Th className='th'>Amount Leftover</Th>
+						<Th className='th'>Leftover $</Th>
 					</Tr>
 				</Thead>
 				<Tbody>
