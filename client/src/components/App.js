@@ -2,6 +2,8 @@ import './App.css';
 import Navigation from './Navigation';
 import Landing from './Landing';
 import Home from './Home';
+import Register from './Register/Register';
+import Login from './Login/Login';
 import Calculator from './Calculator/Calculator';
 import Budget from './Budget/Budget';
 import Todo from './Todo';
@@ -21,6 +23,8 @@ export default function App() {
 			</header>
 			<main>
 				{href === 'http://localhost:3000/' ? <Landing /> : null}
+				{href === 'http://localhost:3000/register' ? <Register /> : null}
+				{href === 'http://localhost:3000/login' ? <Login /> : null}
 				{href === 'http://localhost:3000/home' ? <Home /> : null}
 				{href === 'http://localhost:3000/calculator' ? <Calculator /> : null}
 				{href === 'http://localhost:3000/budget' ? <Budget /> : null}

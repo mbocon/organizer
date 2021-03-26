@@ -1,0 +1,72 @@
+:root {
+    --main-white: #fff;
+    --main-red: #df3535;
+    --main-green: #28A745;
+}
+
+.auth-h1 {
+   text-align: center;
+   margin-top: 1em;
+}
+
+.hiden-h3 {
+    opacity: 0;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.auth-success {
+    background-color: var(--main-green);
+    color: var(--main-white);
+    width: fit-content;
+    padding: .5rem;
+    margin: 2.5rem auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.auth-error {
+    background-color: var(--main-red);
+    color: var(--main-white);
+    width: 50%;
+    margin: 0 auto;
+    animation: fadeOut 2s 1s;
+    text-align: center;
+}
+
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+.auth-form {
+    width: 50%;
+    margin: 1rem auto;
+}
+
+input {
+    margin-bottom: 1em;
+}
+
+#emailHelp {
+    margin-top: -2em;
+}
+
+
+@media (max-width: 575.98px) { 
+    .auth-form {
+        width: 75%;
+    }
+ }
+
+ @media (min-width: 576px) and (max-width: 767.98px) { 
+    .auth-form {
+        width: 75%;
+    }
+ }
+
+ @media (min-width: 768px) and (max-width: 991.98px) { 
+    .auth-form {
+        width: 75%;
+    }
+  }
