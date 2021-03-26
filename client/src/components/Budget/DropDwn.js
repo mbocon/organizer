@@ -14,7 +14,7 @@ export default function DropDwn(props) {
 			<Dropdown.Toggle variant='primary' id='dropdown-basic' className='budget-dropdown'>
 				Enter budget item
 			</Dropdown.Toggle>
-			<Dropdown.Menu>
+			<Dropdown.Menu id='budget-dropdown'>
 				<Dropdown.Item id='income' onClick={event => renderForm(event)}>
 					Add an income source
 				</Dropdown.Item>

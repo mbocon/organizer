@@ -1,5 +1,5 @@
 import './App.css';
-import Navigation from './Navigation';
+import Navigation from './Navigation/Navigation';
 import Landing from './Landing';
 import Home from './Home';
 import Register from './Register/Register';

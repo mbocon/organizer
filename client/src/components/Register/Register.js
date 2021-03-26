@@ -14,10 +14,10 @@ const Register = () => {
 	const [name, setName] = useState('');
 
 	const handleChange = e => {
-		if (e.target.id === 'name') setName(e.target.value)
+		if (e.target.id === 'name') setName(e.target.value);
 		if (e.target.id === 'email') setEmail(e.target.value);
 		if (e.target.id === 'password') setPassword(e.target.value);
- 		console.log(email, password, name)
+		console.log(email, password, name);
 	};
 
 	const handleSumbit = e => {
@@ -36,9 +36,9 @@ const Register = () => {
 		})
 			.then(resp => resp.json())
 			.then(data => {
-				console.log(data, 'from reg res')
+				console.log(data, 'from reg res');
 			})
-			.then(window.location.href = 'http://localhost:3000/login')
+			.then((window.location.href = 'http://localhost:3000/login'))
 			.catch(err => console.error(err, 'is error'));
 	};
 	return (
@@ -47,7 +47,7 @@ const Register = () => {
 			<form className='auth-form' onSubmit={handleSumbit}>
 				<fieldset>
 					<div className='form-group'>
-					<label htmlFor='name'>Username</label>
+						<label htmlFor='name'>Username</label>
 						<input
 							type='name'
 							className='form-control'
@@ -68,13 +68,7 @@ const Register = () => {
 					</div>
 					<div className='form-group'>
 						<label htmlFor='password'>Password</label>
-						<input
-							type='password'
-							className='form-control'
-							id='password'
-							placeholder='Password'
-							onChange={handleChange}
-						/>
+						<input type='password' className='form-control' id='password' placeholder='Password' onChange={handleChange} />
 					</div>
 				</fieldset>
 				<button className='btn btn-success'>Submit</button>

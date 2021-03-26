@@ -64,6 +64,12 @@ main {
 	margin: 0 0.5rem;
 }
 
+a.nav-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .navbar a:hover {
 	color: var(--main-white) !important;
 }
@@ -74,6 +80,11 @@ button.navbar-toggler {
 
 .navbar-toggler-icon {
 	background-image: url('https://mdbcdn.b-cdn.net/img/svg/hamburger2.svg?color=fff') !important;
+}
+
+.navbar-nav {
+	flex-direction: row !important;
+	justify-content: space-evenly;
 }
 
 /******************************************************************************************/
@@ -97,16 +108,38 @@ button.navbar-toggler {
 	margin: 0 auto;
 }
 
+.dropdown-item {
+	width: 90% !important;
+}
 .dropdown-menu {
 	background-color: var(--secondary-blue) !important;
+	border: none !important;
+}
+
+.budget-dropdown.dropdown-toggle {
+	background-color: var(--main-navy) !important;
+	margin-top: 0.25rem !important;
+	border: 1px solid white;
+}
+
+div.dropdown {
+	margin-top: 1rem;
 }
 
 .dropdown-menu > a {
 	color: var(--main-white) !important;
 }
 
+div.ml-auto.navbar.nav {
+	justify-content: space-between !important;
+}
+
 .dropdown-menu > a:hover {
 	background-color: var(--dark-blue);
+}
+
+#basic-navbar-nav {
+	margin-right: 3rem;
 }
 
 #dropdown-basic {
@@ -210,11 +243,11 @@ button.navbar-toggler {
 }
 
 .budget-dropdown {
-	margin-top: 0rem!important;
+	margin-top: 0rem !important;
 	margin-bottom: 1rem;
 }
 
-.budget-input{
+.budget-input {
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -226,7 +259,7 @@ button.navbar-toggler {
 }
 
 .budget-cancel-btn {
-	margin: 0 0 0 .25rem;
+	margin: 0 0 0 0.25rem;
 }
 
 .budget-submit-btn {
@@ -234,8 +267,12 @@ button.navbar-toggler {
 }
 
 :is(#income, #expense, #debt, #savings) {
-	padding: .2rem;
+	padding: 0.2rem;
 	margin-right: 5px;
+}
+
+:is(a#income.dropdown-item, a#expense.dropdown-item, a#debt.dropdown-item, a#savings.dropdown-item){
+	width: 100%!important;
 }
 
 .budget-h3 {
@@ -247,15 +284,15 @@ button.navbar-toggler {
 	background-color: var(--main-cyan);
 	text-align: center;
 	margin-top: 1.5rem;
-	
 }
-.th  {
+
+.th {
 	font-style: oblique;
 }
 
 .td {
 	font-weight: 500;
-	padding: .5rem 0rem;
+	padding: 0.5rem 0rem;
 }
 
 /******************************************************************************************/
@@ -284,23 +321,33 @@ button.navbar-toggler {
 /******************************************************************************************/
 /******************************************************************************************/
 
-
-
 @media (min-width: 601px) and (max-width: 800px) {
 	main {
-		font-size: 1rem!important;
+		font-size: 1rem !important;
+	}
+	#nav-dropdown {
+		margin-top: -1rem !important;
+		padding-left: 1rem !important;
+		margin-left: -3rem !important;
+		font-size: 0.8rem !important;
+	}
+
+	a.nav-link {
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
 	}
 	#dropdown-basic {
 		margin-top: 1rem;
-		font-size: .8rem;
+		font-size: 0.8rem;
 	}
 	.dropdown-menu {
-		font-size: .8rem!important;
+		font-size: 0.8rem !important;
 	}
-	.btn{
-		font-size: .8rem!important;
+	.btn {
+		font-size: 0.8rem !important;
 	}
-	.home-intro-h2{
+	.home-intro-h2 {
 		font-size: 1.5rem;
 	}
 	.home-info {
@@ -310,10 +357,10 @@ button.navbar-toggler {
 		width: 50%;
 	}
 	.Button {
-		font-size: 3vmin!important;
+		font-size: 3vmin !important;
 	}
 	.Display {
-		font-size: 6vmin!important;
+		font-size: 6vmin !important;
 	}
 	:is(#income, #expense, #debt, #savings) {
 		width: 50%;
@@ -322,31 +369,44 @@ button.navbar-toggler {
 
 @media (min-width: 250px) and (max-width: 600px) {
 	main {
-		font-size: .8rem!important;
+		font-size: 0.8rem !important;
+	}
+	#nav-dropdown {
+		margin-top: -1rem !important;
+		padding-left: 1rem !important;
+		margin-left: -3rem !important;
+		font-size: 0.8rem !important;
+	}
+
+	a.nav-link {
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+		margin-top: 1rem;
 	}
 	#dropdown-basic {
 		margin-top: 1rem;
-		font-size: .8rem;
+		font-size: 0.8rem;
 	}
 	.dropdown-menu {
-		font-size: .7rem!important;
+		font-size: 0.7rem !important;
 	}
-	.btn{
-		font-size: .7rem!important;
+	.btn {
+		font-size: 0.7rem !important;
 	}
-	.home-intro-h2{
+	.home-intro-h2 {
 		font-size: 1.25rem;
 	}
 	.home-info {
 		margin-top: 1rem;
 	}
 	.Calculator {
-		width: 75%!important;
+		width: 75% !important;
 		margin: 1rem auto;
 		height: 50%;
 	}
 	.Display {
-		font-size: 5vmin!important;
+		font-size: 5vmin !important;
 	}
 	:is(#income, #expense, #debt, #savings) {
 		width: 40%;

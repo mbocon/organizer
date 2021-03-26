@@ -1,5 +1,6 @@
 import React from 'react';
-import { Navbar, Nav, Button } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
+import NavDrop from './NavDrop';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default function Navigation() {
@@ -14,17 +15,14 @@ export default function Navigation() {
 			<Navbar.Toggle aria-controls='basic-navbar-nav' />
 			<Navbar.Collapse id='basic-navbar-nav'>
 				<Nav className='ml-auto'>
+				<NavDrop />
+				<Nav.Link href='/home'>Home</Nav.Link>
 					{localStorage.token ? null : <Nav.Link href='/register'>Sign up</Nav.Link>}
-					{localStorage.token ? <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
-					: <Nav.Link href='/login'>Login</Nav.Link> }
-					<Nav.Link href='/home'>Home</Nav.Link>
-					<Nav.Link href='/calculator'>Calculator</Nav.Link>
-					<Nav.Link href='/budget'>Budget</Nav.Link>
-					<Nav.Link href='/todo'>To-do</Nav.Link>
-					<Nav.Link href='/timer'>Timer</Nav.Link>
-					<Nav.Link href='/journal'>Journal</Nav.Link>
-					<Nav.Link href='/workouts'>Workouts</Nav.Link>
-					<Nav.Link href='/diet'>Diet</Nav.Link>
+					{localStorage.token ? (
+						<Nav.Link onClick={handleLogout}>Logout</Nav.Link>
+					) : (
+						<Nav.Link href='/login'>Login</Nav.Link>
+					)}
 				</Nav>
 			</Navbar.Collapse>
 		</Navbar>
