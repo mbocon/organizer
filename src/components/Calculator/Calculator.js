@@ -2,7 +2,7 @@ import React from 'react';
 import Engine from './Engine.js';
 import Display from './Display.js';
 import Button from './CalcButton.js';
-import './App.css';
+import '../App.css';
 
 export default class Calculator extends React.Component {
 	constructor(props) {

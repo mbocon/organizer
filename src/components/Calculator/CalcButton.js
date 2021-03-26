@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { GlobalHotKeys } from "react-hotkeys";
 // import "./CalcButton.css";
-import "./App.css";
+import "../App.css";
 
 export default class Button extends React.Component {
   constructor(props) {

@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 const useForm = (callback) => {
 	const [inputs, setInputs] = useState({});
-	console.log(callback, 'is cb')
 
 	const handleSubmit = event => {
 		if (event) {
