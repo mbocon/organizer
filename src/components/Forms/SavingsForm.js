@@ -4,7 +4,7 @@ import useForm from '../CustomHooks/useForm';
 const SavingsForm = props => {
 	console.log(props, 'are form props');
 	const logInfo = () => {
-		console.log(inputs);
+		console.log(inputs, 'log info - cb');
 	};
 
 	const { inputs, handleChange, handleSubmit, handleCancel } = useForm(logInfo);

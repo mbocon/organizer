@@ -1,10 +1,10 @@
 import React from 'react';
 import useForm from '../CustomHooks/useForm';
 
-const ExpenseForm = props => {
+const ExpenseForm = (props) => {
 	console.log(props, 'are form props');
 	const logInfo = () => {
-		console.log(inputs);
+		console.log(inputs, 'log info - cb');
 	};
 
 	const { inputs, handleChange, handleSubmit, handleCancel } = useForm(logInfo);

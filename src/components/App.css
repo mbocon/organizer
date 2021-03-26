@@ -45,7 +45,7 @@ main {
 	overflow: scroll;
 }
 
-:is(.home, .calculator-page, .budget, .todo, .timer, .journal, .workouts, .diet) {
+:is(.landing, .home, .calculator-page, .budget, .todo, .timer, .journal, .workouts, .diet) {
 	display: flex;
 	flex-direction: column;
 	align-items: center;

@@ -13,7 +13,7 @@ export default function Home() {
 				break;
 			case 'Budget':
 				setDisplayInfo(
-					'An easy to use budgeting tool. Enter your monthly income, expenses and savings goals to create a working budget.',
+					'An easy to use budgeting tool. Enter your monthly income, expenses, debt and savings goals to create a working budget.',
 				);
 				break;
 			case 'To-do':

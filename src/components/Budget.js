@@ -18,7 +18,7 @@ export default function Budget() {
 
 	return (
 		<div className='budget'>
-			<h3 className='budget-h3'>*USERNAME's Budget</h3>
+			<h3 className='budget-h3'>Username's Budget</h3>
 			<div className='budget-input'>
 				{displayForm === false ? (
 					<Dropdown>
@@ -62,11 +62,11 @@ export default function Budget() {
 				</Thead>
 				<Tbody>
 					<Tr>
-						<Td className='td'>First</Td>
-						<Td className='td'>Second</Td>
-						<Td className='td'>Third</Td>
-						<Td className='td'>Fourth</Td>
-						<Td className='td'>Fifth</Td>
+						<Td className='td'>Enter a value</Td>
+						<Td className='td'>Enter a value</Td>
+						<Td className='td'>Enter a value</Td>
+						<Td className='td'>Enter a value</Td>
+						<Td className='td'>Enter a value</Td>
 					</Tr>
 				</Tbody>
 			</Table>

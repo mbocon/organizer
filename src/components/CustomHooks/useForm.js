@@ -1,13 +1,15 @@
 import { useState } from 'react';
 
-const useForm = (callback, props) => {
+const useForm = (callback) => {
 	const [inputs, setInputs] = useState({});
+	console.log(callback, 'is cb')
 
 	const handleSubmit = event => {
 		if (event) {
 			event.preventDefault();
 			console.log('submitting', inputs);
 		}
+		callback();
 	};
 	const handleChange = event => {
 		console.log('changing', inputs);
