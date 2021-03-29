@@ -6,13 +6,14 @@ import SavingsForm from '../Forms/SavingsForm';
 import Dropdwn from './DropDwn';
 import ResponsiveTable from './ResponsiveTable';
 
-export default function Budget() {
+export default function Budget(props) {
+	const { user } = props;
 	const [displayForm, setDisplayForm] = useState(false);
 	const [formType, setFormType] = useState('');
 
 	return (
 		<div className='budget'>
-			<h3 className='budget-h3'>Username's Budget</h3>
+			<h4 className='budget-h4'><span className="current-user">{user}</span>'s Budget</h4>
 			<div className='budget-input'>
 				{displayForm === false ? (
 					<Dropdwn setFormType={setFormType} displayForm={displayForm} setDisplayForm={setDisplayForm} />

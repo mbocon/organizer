@@ -15,6 +15,8 @@
 	--secondary-white: #f5f5f5;
 	--main-orange: #e68a12;
 	--main-grey: #2a2b2d;
+	--main-green: #045911;
+	--main-red: #ab1010;
 }
 
 * {
@@ -51,6 +53,15 @@ main {
 	align-items: center;
 	height: 100%;
 	background-color: var(--main-cyan);
+}
+
+.current-user {
+	font-style: oblique;
+}
+
+.budget-dropdown-top{
+	margin-top: 1rem!important;
+	background-color: var(--main-navy) !important;
 }
 
 /******************************************************************************************/
@@ -123,7 +134,7 @@ button.navbar-toggler {
 }
 
 div.dropdown {
-	margin-top: 1rem;
+	margin-top: -1rem;
 }
 
 .dropdown-menu > a {
@@ -239,7 +250,7 @@ div.ml-auto.navbar.nav {
 /******************************************************************************************/
 
 .budget {
-	margin: 1rem;
+	/* margin: 1rem; */
 }
 
 .budget-dropdown {
@@ -262,22 +273,47 @@ div.ml-auto.navbar.nav {
 	margin: 0 0 0 0.25rem;
 }
 
-.budget-submit-btn {
-	/* tbd */
+.budget-submit-btn,
+.budget-cancel-btn {
+	height: fit-content;
 }
 
-:is(#income, #expense, #debt, #savings) {
-	padding: 0.2rem;
-	margin-right: 5px;
+.budget-delete-btn {
+	padding: 0 0.5rem !important;
+	margin-top: -0.25rem;
+	/* background-color: rgb(138, 60, 46)!important; */
+	/* color: black!important; */
+	border: none!important;
 }
 
-:is(a#income.dropdown-item, a#expense.dropdown-item, a#debt.dropdown-item, a#savings.dropdown-item){
-	width: 100%!important;
+:is(#income, #expense, #debt, #savings, #value, #date) {
+	padding: 0.3rem;
+	/* margin-right: 10px; */
+	/* border: 1px solid; */
 }
 
-.budget-h3 {
-	box-shadow: 0px 3px 2px -2px var(--main-blue);
+:is(a#income.dropdown-item, a#expense.dropdown-item, a#debt.dropdown-item, a#savings.dropdown-item) {
+	width: 100% !important;
+}
+
+.income-form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#date {
+	margin-right: 10px;
+}
+
+.budget-h4 {
+	box-shadow: 0px 4px 2px -2px var(--main-blue);
 	margin-bottom: 2rem;
+	background-color: rgba(200, 233, 255, 0.75);
+	width: 100vw;
+	text-align: center;
+	font-weight: 600;
+	padding: 0.5rem;
 }
 
 .responsiveTable {
@@ -287,13 +323,90 @@ div.ml-auto.navbar.nav {
 }
 
 .th {
-	font-style: oblique;
+	text-decoration: underline 3px;
 }
 
 .td {
 	font-weight: 500;
 	padding: 0.5rem 0rem;
 }
+
+:is(.income-span, .savings-span, .leftover-span, .expense-span, .debt-span) {
+	color: var(--main-white);
+	padding: 0.25rem 0.75rem;
+	width: 50%;
+}
+
+:is(.income-span, .savings-span, .leftover-span) {
+	/* background-color: var(--main-green); */
+	color:  var(--main-white);
+	font-weight: 600;
+	background-color: rgba(4, 89, 17, .75);
+}
+
+:is(.expense-span, .debt-span) {
+	/* background-color: var(--main-red); */
+	color:  var(--main-white);
+	background-color: rgba(171, 16, 16, 0.75);
+	font-weight: 600;
+}
+
+.all-budget-items {
+	width: 100%;
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	margin-top: 1rem;
+}
+
+.all-budget-items-h6 {
+	text-transform: uppercase;
+	box-shadow: 0px 4px 2px -2px var(--main-blue);
+	text-align: center;
+	background-color: rgba(200, 233, 255, 0.75);
+	width: 100%;
+	padding: .75rem;
+	font-weight: 600;
+}
+
+.budget-items-div {
+	display: flex;
+	justify-content: space-between;
+	padding: .5rem 1.5rem;
+	align-items: center;
+}
+
+.budget-type-span {
+	text-transform: capitalize;
+}
+
+.budget-value-span {
+	width: 20%;
+	margin-left: 1rem;
+}
+
+.budget-type-span,
+.budget-date-span {
+	width: 25%;
+}
+
+.span-title  {
+	font-style: italic;
+}
+
+
+.red {
+	color: var(--main-white);
+	background-color: rgba(171, 16, 16, 0.75);
+	padding-left: 5px;
+}
+
+.green  {
+	color: var(--main-white);
+	background-color: rgba(4, 89, 17, .75);
+	padding-left: 5px;
+}
+
 
 /******************************************************************************************/
 /******************************************************************************************/
@@ -367,15 +480,40 @@ div.ml-auto.navbar.nav {
 	}
 }
 
+@media screen and (max-width: 40em) {
+	.responsiveTable tbody tr {
+		padding: 0 !important;
+		border: none !important;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	td.td.pivoted {
+		width: 90%;
+		display: flex;
+		justify-content: space-evenly;
+		margin-top: -1rem;
+	}
+	.responsiveTable tbody tr td {
+		margin-bottom: 1rem;
+		margin-left: 1rem;
+	}
+}
+
 @media (min-width: 250px) and (max-width: 600px) {
 	main {
 		font-size: 0.8rem !important;
 	}
 	#nav-dropdown {
-		margin-top: -1rem !important;
+		margin-top: .25rem !important;
 		padding-left: 1rem !important;
 		margin-left: -3rem !important;
 		font-size: 0.8rem !important;
+	}
+	.budget-dropdown-top{
+		margin-top: 2rem!important;
+		background-color: var(--main-navy) !important;
 	}
 
 	a.nav-link {
@@ -408,7 +546,7 @@ div.ml-auto.navbar.nav {
 	.Display {
 		font-size: 5vmin !important;
 	}
-	:is(#income, #expense, #debt, #savings) {
+	:is(#income, #expense, #debt, #savings, #value, #date) {
 		width: 40%;
 	}
 }

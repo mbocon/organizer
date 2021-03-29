@@ -47,6 +47,7 @@ const Login = props => {
 					setSuccessMsg('Login successful!')
 					localStorage.token = response.userId.token;
 					localStorage._id = response.userId._id;
+					localStorage.user = response.userId.name;
 					localStorage.setItem('created', true);
 					console.log(response, 'is resp');
 					setTimeout(()=>{
@@ -71,7 +72,7 @@ const Login = props => {
 			<form className='auth-form' onSubmit={handleSumbit}>
 				<fieldset>
 					<div className='form-group'>
-						<label htmlFor='email'>Email address</label>
+						<label htmlFor='email'>Email</label>
 						<input
 							type='email'
 							className='form-control'
@@ -83,7 +84,7 @@ const Login = props => {
 					</div>
 					<div className='form-group'>
 						<label htmlFor='password'>Password</label>
-						<input type='password' className='form-control' id='password' placeholder='Password' onChange={handleChange} />
+						<input type='password' className='form-control' id='password' placeholder='Enter password' onChange={handleChange} />
 					</div>
 				</fieldset>
 				<button className='btn btn-success'>Submit</button>

@@ -11,8 +11,12 @@ const ExpenseForm = (props) => {
 
 	return (
 		<div className='form'>
-			<form onSubmit={handleSubmit}>
-				<input type='text' name='expense' id='expense' onChange={handleChange} placeholder='Enter expense' required />
+			<form onSubmit={(event)=> handleSubmit(event, props)}>
+				<input type='text' name='expense' id='expense' onChange={handleChange} placeholder='Expense name' required />
+				<input type='text' name='value' id='value' onChange={handleChange} placeholder='$ Amount' required />
+				<input type='text' name='date' id='date' onChange={handleChange} placeholder='Due Date' required />
+				<input type='text' name='type' id='type' onChange={handleChange} value='expense' style={{display: 'none'}} />
+
 				<button className='btn btn-success budget-submit-btn' type='submit'>Submit</button>
 				<button onClick={event => handleCancel(event, props)} className='btn btn-danger budget-cancel-btn'>
 					Cancel

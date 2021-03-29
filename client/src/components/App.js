@@ -15,24 +15,28 @@ import Footer from './Footer';
 
 let href = window.location.href;
 
+let user = localStorage.getItem('user');
+console.log(user, 'is logged in user')
+console.log(localStorage,' is LS')
+
 export default function App() {
 	return (
 		<div className='App'>
 			<header>
-				<Navigation />
+				<Navigation user={user} />
 			</header>
 			<main>
-				{href === 'http://localhost:3000/' ? <Landing /> : null}
+				{href === 'http://localhost:3000/' ? <Landing user={user} /> : null}
 				{href === 'http://localhost:3000/register' ? <Register /> : null}
 				{href === 'http://localhost:3000/login' ? <Login /> : null}
-				{href === 'http://localhost:3000/home' ? <Home /> : null}
-				{href === 'http://localhost:3000/calculator' ? <Calculator /> : null}
-				{href === 'http://localhost:3000/budget' ? <Budget /> : null}
-				{href === 'http://localhost:3000/todo' ? <Todo /> : null}
-				{href === 'http://localhost:3000/timer' ? <Timer /> : null}
-				{href === 'http://localhost:3000/journal' ? <Journal /> : null}
-				{href === 'http://localhost:3000/workouts' ? <Workouts /> : null}
-				{href === 'http://localhost:3000/diet' ? <Diet /> : null}
+				{href === 'http://localhost:3000/home' ? <Home user={user} /> : null}
+				{href === 'http://localhost:3000/calculator' ? <Calculator user={user} /> : null}
+				{href === 'http://localhost:3000/budget' ? <Budget user={user} /> : null}
+				{href === 'http://localhost:3000/todo' ? <Todo user={user} /> : null}
+				{href === 'http://localhost:3000/timer' ? <Timer user={user} /> : null}
+				{href === 'http://localhost:3000/journal' ? <Journal user={user} /> : null}
+				{href === 'http://localhost:3000/workouts' ? <Workouts user={user} /> : null}
+				{href === 'http://localhost:3000/diet' ? <Diet user={user} /> : null}
 			</main>
 			<Footer />
 		</div>
