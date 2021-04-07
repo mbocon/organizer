@@ -24,7 +24,7 @@ export default function ResponsiveTable(props) {
 		debtRef.current = debtRef.current - debtRef.current;
 		savingsRef.current = savingsRef.current - savingsRef.current;
 		leftoverRef.current = leftoverRef.current - leftoverRef.current;
-		fetch(`http://localhost:4000/api/budget/${localStorage._id}/getBudgets`)
+		fetch(`http://localhost:4000/api/budgets/${localStorage._id}/getBudgets`)
 			.then(response => response.json())
 			.then(json => {
 				json.forEach(item => {
@@ -45,7 +45,7 @@ export default function ResponsiveTable(props) {
 			debtRef.current = debtRef.current - debtRef.current;
 			savingsRef.current = savingsRef.current - savingsRef.current;
 			leftoverRef.current = leftoverRef.current - leftoverRef.current;
-			fetch(`http://localhost:4000/api/budget/${localStorage._id}/getBudgets`)
+			fetch(`http://localhost:4000/api/budgets/${localStorage._id}/getBudgets`)
 				.then(response => response.json())
 				.then(json => {
 					json.forEach(item => {
@@ -116,7 +116,7 @@ export default function ResponsiveTable(props) {
 					<span className='budget-type-span span-title'>Name</span>
 					<span className='budget-date-span span-title'>Date</span>
 					<span className='budget-value-span span-title'>Amount</span>
-					<span className='budget-option-span span-title'>Option</span>
+					<span className='budget-option-span span-title'>Options</span>
 				</div>
 
 				{allBudgetItems.length !== 0
@@ -128,9 +128,7 @@ export default function ResponsiveTable(props) {
 										<span className='budget-type-span'>{item.name}</span>
 										<span className='budget-date-span'>{item.date}</span>
 										<span
-											className={`budget-value-span ${item.type === 'income' ? 'green' : ''} ${
-												item.type === 'expense' ? 'red' : ''
-											} ""} ${item.type === 'debt' ? 'red' : ''} ""} ${item.type === 'savings' ? 'green' : ''} ""}`}>
+											className={'budget-value-span'}>
 											{item.value}
 										</span>
 										<button onClick={event => handleDelete(event, item)} className='btn btn-danger budget-delete-btn'>

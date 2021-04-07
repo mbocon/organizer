@@ -23,7 +23,7 @@ const useForm = callback => {
 				date: formattedInputs[2].value
 			};
 
-			fetch(`http://localhost:4000/api/budget/create`, {
+			fetch(`http://localhost:4000/api/budgets/create`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',

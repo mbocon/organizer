@@ -11,7 +11,7 @@ const useDelete = (callback) => {
 
 			event.preventDefault();
 		
-			fetch(`http://localhost:4000/api/budget/delete/${props.user}/${props._id}`, {
+			fetch(`http://localhost:4000/api/budgets/delete/${props.user}/${props._id}`, {
 				method: 'DELETE',
 				headers: {
 					'Content-Type': 'application/json',
