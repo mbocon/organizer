@@ -3,14 +3,14 @@ import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 import useDelete from '../CustomHooks/useDelete';
 
-export default function ResponsiveTable(props) {
-	// console.log(props, 'are table props');
+export default function ResponsiveTable() {
 	let [allBudgetItems, setAllBudgetItems] = useState([]);
 	let [income, setIncome] = useState(0);
 	let [expenses, setExpenses] = useState(0);
 	let [debt, setDebt] = useState(0);
 	let [savings, setSavings] = useState(0);
 	let [leftover, setLeftover] = useState(0);
+	let [deleted, setDeleted] = useState(false);
 
 	let incomeRef = useRef(income);
 	let expenseRef = useRef(expenses);
@@ -62,6 +62,30 @@ export default function ResponsiveTable(props) {
 		localStorage.removeItem('newBudget');
 	});
 
+	useEffect(() => {
+		if (deleted) {
+			incomeRef.current = incomeRef.current - incomeRef.current;
+			expenseRef.current = expenseRef.current - expenseRef.current;
+			debtRef.current = debtRef.current - debtRef.current;
+			savingsRef.current = savingsRef.current - savingsRef.current;
+			leftoverRef.current = leftoverRef.current - leftoverRef.current;
+			fetch(`http://localhost:4000/api/budgets/${localStorage._id}/getBudgets`)
+				.then(response => response.json())
+				.then(json => {
+					json.forEach(item => {
+						if (item.type === 'income') setIncome((incomeRef.current += parseInt(item.value)));
+						if (item.type === 'expense') setExpenses((expenseRef.current += parseInt(item.value)));
+						if (item.type === 'debt') setDebt((debtRef.current += parseInt(item.value)));
+						if (item.type === 'savings') setSavings((savingsRef.current += parseInt(item.value)));
+						setLeftover((leftoverRef.current = incomeRef.current - expenseRef.current));
+					});
+					setAllBudgetItems([]);
+					setAllBudgetItems(json);
+				});
+			setDeleted(false);
+		}
+	}, [deleted]);
+
 	function compare(a, b) {
 		if (a.date < b.date) return -1;
 		if (a.date > b.date) return 1;
@@ -71,10 +95,10 @@ export default function ResponsiveTable(props) {
 	allBudgetItems.sort(compare);
 
 	const handleUpdateAfterDelete = () => {
-		window.location.reload();
+		setDeleted(true);
 	};
 
-	const { handleDelete } = useDelete(handleUpdateAfterDelete);
+	const { handleDelete } = useDelete();
 
 	return (
 		<Fragment key='frag-1'>
@@ -121,17 +145,15 @@ export default function ResponsiveTable(props) {
 
 				{allBudgetItems.length !== 0
 					? allBudgetItems.map(item => {
-							// console.log(item, 'is item to all budget');
 							return (
 								<div key={item._id}>
 									<div className='budget-items-div'>
 										<span className='budget-type-span'>{item.name}</span>
 										<span className='budget-date-span'>{item.date}</span>
-										<span
-											className={'budget-value-span'}>
-											{item.value}
-										</span>
-										<button onClick={event => handleDelete(event, item)} className='btn btn-danger budget-delete-btn'>
+										<span className={'budget-value-span'}>{item.value}</span>
+										<button
+											onClick={event => handleDelete(event, item, handleUpdateAfterDelete)}
+											className='btn btn-danger budget-delete-btn'>
 											Delete
 										</button>
 									</div>

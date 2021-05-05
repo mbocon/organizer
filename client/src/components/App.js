@@ -16,8 +16,8 @@ import Footer from './Footer';
 let href = window.location.href;
 
 let user = localStorage.getItem('user');
-console.log(user, 'is logged in user')
-console.log(localStorage,' is LS')
+// console.log(user, 'is logged in user')
+// console.log(localStorage,' is LS')
 
 export default function App() {
 	return (
