@@ -1,16 +1,8 @@
-// import React from 'react';
-
-const useDelete = (callback) => {
-    // console.log(callback, 'is callback')
-	const handleDelete = (event, props) => {
+const useDelete = () => {
+	const handleDelete = (event, props, handleUpdateAfterDelete) => {
 		if (event) {
-			// console.log(event, 'is the event');
-			// console.log('delete');
-			// console.log(props.user, 'are props user ');
-			// console.log(props._id, 'is prop id');
-
 			event.preventDefault();
-		
+
 			fetch(`http://localhost:4000/api/budgets/delete/${props.user}/${props._id}`, {
 				method: 'DELETE',
 				headers: {
@@ -20,17 +12,12 @@ const useDelete = (callback) => {
 			})
 				.then(resp => resp.json())
 				.then(data => {
-					console.log(data, 'from budget DELETE resp');
-					// localStorage.setItem('newDelete', 'true');
-					// form.reset();
-					// setDisplayForm(!displayForm);
-                  
+					handleUpdateAfterDelete();
 				})
 				.catch(err => console.error(err, 'is the error'));
 		}
-        callback();
 	};
-    
+
 	return {
 		handleDelete,
 	};
