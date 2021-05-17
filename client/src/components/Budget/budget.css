@@ -1,0 +1,168 @@
+/******************************************************************************************/
+/******************************************************************************************/
+/* BUDGET */
+/******************************************************************************************/
+/******************************************************************************************/
+
+.budget-dropdown {
+	margin-top: 0rem !important;
+	margin-bottom: 1rem;
+}
+
+.budget-input {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.budget-form {
+	width: 100%;
+	text-align: center;
+}
+
+.budget-cancel-btn {
+	margin: 0 0 0 0.25rem;
+}
+
+.budget-submit-btn,
+.budget-cancel-btn {
+	height: fit-content;
+}
+
+.budget-delete-btn {
+	padding: 0.1rem 0.5rem !important;
+	margin-top: -0.25rem;
+	/* padding-right: -10px!important; */
+	/* background-color: rgb(138, 60, 46)!important; */
+	/* color: black!important; */
+	border: none !important;
+}
+
+:is(#income, #expense, #debt, #savings, #value, #date, #task) {
+	padding: 0.3rem;
+	/* margin-right: 10px; */
+	/* border: 1px solid; */
+}
+
+:is(a#income.dropdown-item, a#expense.dropdown-item, a#debt.dropdown-item, a#savings.dropdown-item) {
+	width: 100% !important;
+}
+
+.income-form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#date {
+	margin-right: 10px;
+}
+
+.budget-h4 {
+	box-shadow: 0px 4px 2px -2px var(--main-blue);
+	margin-bottom: 2rem;
+	background-color: rgba(200, 233, 255, 0.75);
+	width: 100vw;
+	text-align: center;
+	font-weight: 600;
+	padding: 0.5rem;
+}
+
+.responsiveTable {
+	background-color: var(--main-cyan);
+	text-align: center;
+	margin-top: 1.5rem;
+}
+
+.th {
+	text-decoration: underline 3px;
+}
+
+.td {
+	/* font-weight: 500; */
+	padding: 0.5rem 0rem;
+}
+
+:is(.income-span, .savings-span, .leftover-span, .expense-span, .debt-span, div.tdBefore) {
+	padding: 0.25rem 0.75rem;
+	width: 50%;
+	font-weight: 500;
+}
+
+.all-budget-items {
+	width: 100%;
+	margin-top: 1rem;
+}
+
+.all-budget-items-h5 {
+	text-transform: uppercase;
+	box-shadow: 0px 4px 2px -2px var(--main-blue);
+	text-align: center;
+	background-color: rgba(200, 233, 255, 0.75);
+	width: 100%;
+	padding: 0.75rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+}
+
+.budget-table-thead {
+    text-transform: uppercase;
+    font-style: oblique;
+}
+
+.budget-table-td-head {
+    font-weight: 600;
+}
+
+.budget-table-data {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+    margin-bottom: 1rem;
+    /* padding: 5px; */
+	/* align-items: center; */
+	/* justify-content: space-evenly; */
+	/* margin: 1rem auto; */
+	/* background-color: red; */
+
+	/* text-align: center; */
+}
+
+.budget-table-tr {
+	width: 95%;
+	display: flex;
+	margin: 0 auto;
+}
+
+.budget-table-tr-1st {
+	border-top: 1px solid black;
+}
+
+
+
+.budget-table-td {
+	width: 25%;
+	text-align: left;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0rem;
+    font-weight: 500;
+}
+
+
+.budget-table-td:last-of-type {
+	border-right: 1px solid;
+}
+
+.budget-th {
+	text-decoration: underline 3px;
+	padding-bottom: 1rem;
+}
+
+.table-bold {
+    font-weight: 600;
+}

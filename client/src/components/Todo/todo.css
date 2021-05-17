@@ -1,0 +1,94 @@
+/******************************************************************************************/
+/******************************************************************************************/
+/* TODOS */
+/******************************************************************************************/
+/******************************************************************************************/
+
+.todo-h3 {
+	margin: 1rem;
+	text-align: center;
+}
+
+.todo {
+	/* width: 100%!important; */
+}
+
+.todo-form {
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.todo-title {
+	display: flex;
+	justify-content: space-between;
+	width: 90%;
+	margin: 0 auto;
+	padding: 1rem 0.5rem;
+	border-bottom: 1px solid var(--main-grey);
+}
+
+.todos-ul {
+	width: 100%;
+	list-style: none;
+	margin-top: 1rem;
+	padding-top: 1rem;
+	padding-left: 0px;
+	padding-bottom: 1rem;
+	border-top: 2px solid var(--main-blue);
+}
+
+.todos-li {
+	width: 95%;
+	border-bottom: 1px solid var(--main-grey);
+	padding: 1rem 0.5rem;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.todos-h6 {
+	width: 20%;
+	width: 95%;
+	border-bottom: 1px solid var(--main-grey);
+	padding: 1rem 0.5rem;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.todos-h6 h6 {
+	font-weight: bolder !important;
+	font-size: 0.9rem;
+	font-style: oblique;
+}
+
+.todo-task {
+	width: 40%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.deadline-title {
+	margin-left: 1rem;
+}
+
+.todo-date {
+	width: 25%;
+	margin-left: -2rem;
+}
+
+.edit-form-h5 {
+	text-align: center;
+}
+
+.edit-form {
+	margin-top: 3rem;
+}
+
+.edit-cancel-btn {
+	margin-left: 1rem;
+}

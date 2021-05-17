@@ -32,7 +32,7 @@ const SavingsForm = props => {
 					required
 				/>
 				<input
-					type='text'
+					type='number'
 					name='value'
 					id='value'
 					onChange={handleChange}
@@ -42,7 +42,7 @@ const SavingsForm = props => {
 					required
 				/>
 				<input
-					type='text'
+					type='date'
 					name='date'
 					id='date'
 					onChange={handleChange}

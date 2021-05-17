@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import TodoForm from '../Forms/TodoForm';
 import useTodo from '../CustomHooks/useTodo';
+import './todo.css'
 
 export default function Todo() {
 	let [allTodos, setAllTodos] = useState([]);
@@ -73,9 +74,18 @@ export default function Todo() {
 				<ul className='todos-ul'>
 					{allTodos.length
 						? allTodos.map(todo => {
+								console.log(todo, 'is my TODO');
 								return (
+									<Fragment>
+									<div className='todos-h6'>
+										<h6>Task</h6>
+										<h6>Deadline</h6>
+										<h6>Options</h6>
+									</div>
+									
 									<li key={todo._id} className='todos-li'>
 										<span className='todo-task'>{todo.task} </span>
+
 										<span className='todo-date'>{todo.date}</span>
 										<span className='todo-buttons'></span>
 										<button onClick={e => handleEdit(e, todo, editing, setEditing)} className='btn btn-secondary todo-btn'>
@@ -85,6 +95,7 @@ export default function Todo() {
 											X
 										</button>
 									</li>
+									</Fragment>
 								);
 						  })
 						: null}
@@ -94,7 +105,7 @@ export default function Todo() {
 					<h5 className='edit-form-h5'>Editing {itemToEdit.task}</h5>
 					<form className='todo-form' onSubmit={event => handleUpdate(event, fetchAfterUpdate)}>
 						<input type='text' name='task' id='task' onChange={handleChange} placeholder={itemToEdit.task} required />
-						<input type='text' name='date' id='date' onChange={handleChange} placeholder={itemToEdit.date} required />
+						<input type='date' name='date' id='date' onChange={handleChange} placeholder={itemToEdit.date} required />
 						<button className='btn btn-success budget-submit-btn' type='submit'>
 							Submit
 						</button>

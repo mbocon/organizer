@@ -13,7 +13,9 @@ const useDelete = () => {
 				.then(resp => resp.json())
 				.then(data => {
 					handleUpdateAfterDelete();
+					// localStorage.setItem('deleted', 'true');
 				})
+
 				.catch(err => console.error(err, 'is the error'));
 		}
 	};

@@ -243,234 +243,7 @@ div.ml-auto.navbar.nav {
 	align-items: center;
 }
 
-/******************************************************************************************/
-/******************************************************************************************/
-/* BUDGET */
-/******************************************************************************************/
-/******************************************************************************************/
 
-.budget {
-	/* margin: 1rem; */
-}
-
-.budget-dropdown {
-	margin-top: 0rem !important;
-	margin-bottom: 1rem;
-}
-
-.budget-input {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-}
-
-.budget-form {
-	width: 100%;
-	text-align: center;
-}
-
-.budget-cancel-btn {
-	margin: 0 0 0 0.25rem;
-}
-
-.budget-submit-btn,
-.budget-cancel-btn {
-	height: fit-content;
-}
-
-.budget-delete-btn {
-	padding: 0.1rem 0.5rem !important;
-	margin-top: -0.25rem;
-	/* padding-right: -10px!important; */
-	/* background-color: rgb(138, 60, 46)!important; */
-	/* color: black!important; */
-	border: none !important;
-}
-
-:is(#income, #expense, #debt, #savings, #value, #date, #task) {
-	padding: 0.3rem;
-	/* margin-right: 10px; */
-	/* border: 1px solid; */
-}
-
-:is(a#income.dropdown-item, a#expense.dropdown-item, a#debt.dropdown-item, a#savings.dropdown-item) {
-	width: 100% !important;
-}
-
-.income-form {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-}
-
-#date {
-	margin-right: 10px;
-}
-
-.budget-h4 {
-	box-shadow: 0px 4px 2px -2px var(--main-blue);
-	margin-bottom: 2rem;
-	background-color: rgba(200, 233, 255, 0.75);
-	width: 100vw;
-	text-align: center;
-	font-weight: 600;
-	padding: 0.5rem;
-}
-
-.responsiveTable {
-	background-color: var(--main-cyan);
-	text-align: center;
-	margin-top: 1.5rem;
-}
-
-.th {
-	text-decoration: underline 3px;
-}
-
-.td {
-	font-weight: 500;
-	padding: 0.5rem 0rem;
-}
-
-:is(.income-span, .savings-span, .leftover-span, .expense-span, .debt-span, div.tdBefore) {
-	/* color: var(--main-white); */
-	padding: 0.25rem 0.75rem;
-	width: 50%;
-	font-weight: 600;
-}
-
-/* :is(.income-span, .savings-span, .leftover-span) {
-	color:  var(--main-white);
-	font-weight: 600;
-	background-color: rgba(4, 89, 17, .75);
-}
-
-:is(.expense-span, .debt-span) {
-	color:  var(--main-white);
-	background-color: rgba(171, 16, 16, 0.75);
-	font-weight: 600;
-} */
-
-.all-budget-items {
-	width: 100%;
-	list-style-type: none;
-	display: flex;
-	flex-direction: column;
-	margin-top: 1rem;
-}
-
-.all-budget-items-h6 {
-	text-transform: uppercase;
-	box-shadow: 0px 4px 2px -2px var(--main-blue);
-	text-align: center;
-	background-color: rgba(200, 233, 255, 0.75);
-	width: 100%;
-	padding: 0.75rem;
-	font-weight: 600;
-}
-
-.budget-items-div {
-	display: flex;
-	justify-content: space-between;
-	padding: 0.5rem 1.5rem;
-	align-items: center;
-}
-
-.budget-type-span {
-	text-transform: capitalize;
-}
-
-.budget-value-span {
-	width: 20%;
-	margin-left: 1rem;
-	padding-left: 5px;
-}
-
-.budget-type-span,
-.budget-date-span {
-	width: 24%;
-}
-
-.span-title {
-	font-style: italic;
-}
-
-/******************************************************************************************/
-/******************************************************************************************/
-/* TODOS */
-/******************************************************************************************/
-/******************************************************************************************/
-
-.todo-h3 {
-	margin: 1rem;
-	text-align: center;
-}
-
-.todo {
-	/* width: 100%!important; */
-}
-
-.todo-form {
-	margin: 0 auto;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-}
-
-.todo-title {
-	display: flex;
-	justify-content: space-between;
-	width: 90%;
-	margin: 0 auto;
-	padding: 1rem 0.5rem;
-	border-bottom: 1px solid var(--main-grey);
-}
-
-.todos-ul {
-	width: 100%;
-	list-style: none;
-	margin-top: 1rem;
-	padding-top: 1rem;
-	padding-left: 0px;
-	padding-bottom: 1rem;
-	border-top: 2px solid var(--main-blue);
-}
-
-.todos-li {
-	width: 95%;
-	border-bottom: 1px solid var(--main-grey);
-	padding: 1rem 0.5rem;
-	margin: 0 auto;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.todo-task {
-	width: 40%;
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.deadline-title {
-	margin-left: 1rem;
-}
-
-.todo-date {
-	width: 25%;
-}
-
-.edit-form-h5  {
-	text-align: center;
-}
-
-.edit-form {
-	margin-top: 3rem;
-}
-
-.edit-cancel-btn {
-	margin-left: 1rem;
-}
 
 /******************************************************************************************/
 /******************************************************************************************/
@@ -485,13 +258,13 @@ div.ml-auto.navbar.nav {
 }
 
 .countdown-input {
-	margin: 1rem .5rem;
-	padding: .25rem;
+	margin: 1rem 0.5rem;
+	padding: 0.25rem;
 	width: 100px;
 	border: 1px solid;
 }
 
-.countdown-buttons  {
+.countdown-buttons {
 	display: flex;
 	justify-content: space-around;
 }
@@ -545,7 +318,7 @@ div.ml-auto.navbar.nav {
 }
 
 .stopwatch-btn {
-	margin-left: .5rem;
+	margin-left: 0.5rem;
 }
 
 /* header,labels,time,buttons */
@@ -676,7 +449,7 @@ div.ml-auto.navbar.nav {
 	}
 
 	.stopwatch-btn-1 {
-		font-size: .8rem!important
+		font-size: 0.8rem !important;
 	}
 
 	.countdown-input {
@@ -701,7 +474,7 @@ div.ml-auto.navbar.nav {
 		width: 40%;
 	}
 	.todo-date {
-		width: 20%;
+		width: 30%;
 	}
 	.deadline-title {
 		margin-left: -3rem;

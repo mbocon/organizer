@@ -8,7 +8,7 @@ import Calculator from './Calculator/Calculator';
 import Budget from './Budget/Budget';
 import Todo from './Todo/Todo';
 import Timer from './Timer/Timer';
-import Journal from './Journal';
+import Journal from './Journal/Journal';
 import Workouts from './Workouts';
 import Diet from './Diet';
 import Footer from './Footer';

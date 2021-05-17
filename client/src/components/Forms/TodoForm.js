@@ -9,7 +9,7 @@ const TodoForm = (props) => {
 		<div className='form'>
 			<form className='todo-form' onSubmit={(event) => handleSubmit(event, props)}>
 				<input type='text' name='task' id='task' onChange={handleChange} placeholder='Task' required />
-				<input type='text' name='date' id='date' onChange={handleChange} placeholder='Deadline' required />
+				<input type='date' name='date' id='date' onChange={handleChange} placeholder='Deadline' required />
 				<button className='btn btn-success budget-submit-btn' type='submit'>Submit</button>
 			</form>
 		</div>

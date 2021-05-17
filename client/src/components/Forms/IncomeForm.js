@@ -37,11 +37,11 @@ const IncomeForm = props => {
 					required
 				/>
 				<input
-					type='text'
+					type='date'
 					name='date'
 					id='date'
-					onChange={handleChange}
 					placeholder='Date'
+					onChange={handleChange}
 					disabled={editedAmount ? false : true}
 					required
 				/>
