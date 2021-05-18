@@ -33,6 +33,7 @@ export default function ResponsiveTable() {
 		fetch(`http://localhost:4000/api/budgets/${localStorage._id}/getBudgets`)
 			.then(response => response.json())
 			.then(json => {
+				console.log(json,' is  my json objs', localStorage._id, 'is my localstorage id')
 				json.forEach(item => {
 					if (item.type === 'income') setIncome((incomeRef.current += parseInt(item.value)));
 					if (item.type === 'expense') setExpenses((expenseRef.current += parseInt(item.value)));
@@ -183,7 +184,7 @@ export default function ResponsiveTable() {
 									return (
 										<tr key={idx} className='budget-table-tr'>
 											<td className='budget-table-td'>
-												<span className='table-bold'>{item.name} <small>Type:{item.type.replace(/^\w/, c => c.toUpperCase())}</small></span>
+												<span className='table-bold'>{item.name} <small>Type:<span className={item.type}>{item.type.replace(/^\w/, c => c.toUpperCase())}</span></small></span>
 											</td>
 											<td className='budget-table-td'>
 												<span>{item.date}</span>
@@ -193,12 +194,12 @@ export default function ResponsiveTable() {
 											</td>
 											<td className='budget-table-td'>
 												<button
-													style={{ border: 'none', background: 'none' }}
+													style={{ border: 'none', background: 'none', marginRight: '.5rem' }}
 													onClick={e => toggleEdit(e, item)}>
 													✏️
 												</button>
 												<button
-													style={{ border: 'none', background: 'none' }}
+													style={{ border: 'none', background: 'none'}}
 													onClick={event => handleDelete(event, item, handleUpdateAfterDelete)}>
 													🗑️
 												</button>

@@ -15,7 +15,7 @@ const Login = props => {
 	const [authError, setAuthError] = useState(false);
 	const [errorMsg, setErrorMsg] = useState('');
 	const [authSuccess, setAuthSuccess] = useState(false);
-	const [successMsg, setSuccessMsg] = useState('')
+	const [successMsg, setSuccessMsg] = useState('');
 	// const [user, setUser] = useState({});
 
 	const handleChange = e => {
@@ -43,18 +43,17 @@ const Login = props => {
 					setAuthError(true);
 					setErrorMsg(response.message);
 				} else {
-					setAuthSuccess(true)
-					setSuccessMsg('Login successful!')
+					setAuthSuccess(true);
+					setSuccessMsg('Login successful!');
 					localStorage.token = response.userId.token;
 					localStorage._id = response.userId._id;
 					localStorage.user = response.userId.name;
 					localStorage.setItem('created', true);
 					console.log(response, 'is resp');
-					setTimeout(()=>{
-						window.location.href = 'http://localhost:3000/home'
-					},1000)
+					setTimeout(() => {
+						window.location.href = 'http://localhost:3000/home';
+					}, 1000);
 				}
-				
 			})
 			.catch(err => console.error(err));
 	};
@@ -67,7 +66,13 @@ const Login = props => {
 
 	return (
 		<div className='auth'>
-			{authSuccess === true ? <h5 className='auth-h1 auth-success'>{successMsg} <Spinner /></h5> : <h1 className='auth-h1'>Login</h1>}
+			{authSuccess === true ? (
+				<h5 className='auth-h1 auth-success'>
+					{successMsg} <Spinner />
+				</h5>
+			) : (
+				<h1 className='auth-h1'>Login</h1>
+			)}
 			{authError === true ? <h3 className='auth-error'>{errorMsg}</h3> : <h3 className='hiden-h3'>-</h3>}
 			<form className='auth-form' onSubmit={handleSumbit}>
 				<fieldset>
@@ -78,17 +83,29 @@ const Login = props => {
 							className='form-control'
 							id='email'
 							aria-describedby='emailHelp'
-							placeholder='Enter email'
+							placeholder='example@email.com'
 							onChange={handleChange}
 						/>
 					</div>
 					<div className='form-group'>
 						<label htmlFor='password'>Password</label>
-						<input type='password' className='form-control' id='password' placeholder='Enter password' onChange={handleChange} />
+						<input
+							type='password'
+							className='form-control'
+							id='password'
+							placeholder='*******'
+							onChange={handleChange}
+						/>
 					</div>
 				</fieldset>
-				<button className='btn btn-success'>Submit</button>
+				<button className='btn btn-success'>Login</button>
 			</form>
+			<div className='login-redirect-div'>
+				<p>Don't have an account?</p>
+				<a href='/register'>
+					<button className='btn btn-primary'>Register</button>
+				</a>
+			</div>
 		</div>
 	);
 };

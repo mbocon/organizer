@@ -11,7 +11,9 @@ import Timer from './Timer/Timer';
 import Journal from './Journal/Journal';
 import Workouts from './Workouts';
 import Diet from './Diet';
+import Weather from './Weather/Weather';
 import Footer from './Footer';
+
 
 let href = window.location.href;
 
@@ -37,6 +39,7 @@ export default function App() {
 				{href === 'http://localhost:3000/journal' ? <Journal user={user} /> : null}
 				{href === 'http://localhost:3000/workouts' ? <Workouts user={user} /> : null}
 				{href === 'http://localhost:3000/diet' ? <Diet user={user} /> : null}
+				{href === 'http://localhost:3000/weather' ? <Weather user={user} /> : null}
 			</main>
 			<Footer />
 		</div>

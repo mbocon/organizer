@@ -243,8 +243,6 @@ div.ml-auto.navbar.nav {
 	align-items: center;
 }
 
-
-
 /******************************************************************************************/
 /******************************************************************************************/
 /* TIMER */
@@ -478,5 +476,12 @@ div.ml-auto.navbar.nav {
 	}
 	.deadline-title {
 		margin-left: -3rem;
+	}
+	.budget-submit-btn,
+	.budget-cancel-btn {
+		height: 2.2rem!important;
+	}
+	.todo-deadline-h6 {
+		padding-left: 4rem!important;
 	}
 }

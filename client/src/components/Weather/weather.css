@@ -1,0 +1,27 @@
+.weather {
+	text-align: center;
+	margin-top: 1rem;
+}
+
+.weather-btn {
+	margin-left: 10px;
+}
+
+
+.weather-main {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+}
+
+.weather-form {
+    margin-top: 2rem;
+}
+
+.weather-display {
+    margin: 2rem auto;
+    text-align: left;
+    font-size: 1.15rem;
+    list-style-type: none;
+    padding-left: 0;
+}

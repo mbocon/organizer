@@ -9,10 +9,6 @@
 	text-align: center;
 }
 
-.todo {
-	/* width: 100%!important; */
-}
-
 .todo-form {
 	margin: 0 auto;
 	display: flex;
@@ -67,9 +63,10 @@
 }
 
 .todo-task {
-	width: 40%;
+	width:50%;
 	display: flex;
 	flex-wrap: wrap;
+	padding-right: 1.5rem;
 }
 
 .deadline-title {
@@ -79,6 +76,10 @@
 .todo-date {
 	width: 25%;
 	margin-left: -2rem;
+}
+
+.todo-deadline-h6 {
+	padding-left: 9rem;
 }
 
 .edit-form-h5 {

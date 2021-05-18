@@ -26,7 +26,8 @@
 
 .budget-submit-btn,
 .budget-cancel-btn {
-	height: fit-content;
+	/* height: 2.2rem; */
+	height: 2.5rem
 }
 
 .budget-delete-btn {
@@ -55,7 +56,7 @@
 }
 
 #date {
-	margin-right: 10px;
+	/* margin-right: 10px; */
 }
 
 .budget-h4 {
@@ -165,4 +166,12 @@
 
 .table-bold {
     font-weight: 600;
+}
+
+.income, .savings{
+	border-bottom: 1px solid var(--main-green);
+}
+
+.expense, .debt {
+	border-bottom: 1px solid var(--main-red);
 }

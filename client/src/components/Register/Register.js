@@ -53,7 +53,7 @@ const Register = () => {
 							className='form-control'
 							id='name'
 							aria-describedby='nameHelp'
-							placeholder='Enter name'
+							placeholder='Create username'
 							onChange={handleChange}
 						/>
 						<label htmlFor='email'>Email address</label>
@@ -62,17 +62,23 @@ const Register = () => {
 							className='form-control'
 							id='email'
 							aria-describedby='emailHelp'
-							placeholder='Enter email'
+							placeholder='example@email.com'
 							onChange={handleChange}
 						/>
 					</div>
 					<div className='form-group'>
 						<label htmlFor='password'>Password</label>
-						<input type='password' className='form-control' id='password' placeholder='Password' onChange={handleChange} />
+						<input type='password' className='form-control' id='password' placeholder='*******' onChange={handleChange} />
 					</div>
 				</fieldset>
-				<button className='btn btn-success'>Submit</button>
+				<button className='btn btn-success'>Register</button>
 			</form>
+			<div className='login-redirect-div'>
+				<p>Alreday have an account?</p>
+				<a href='/login'>
+					<button className='btn btn-primary'>Login</button>
+				</a>
+			</div>
 		</div>
 	);
 };
