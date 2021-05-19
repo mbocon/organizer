@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState } from 'react';
 import './weather.css';
 
 export default function Weather() {
@@ -19,6 +19,8 @@ export default function Weather() {
 	const handleChange = e => {
 		setSearch(e.target.value);
 	};
+
+	console.log(weather, 'is my api  resp')
 
 	return (
 		<div className='weather'>

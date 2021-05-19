@@ -170,7 +170,7 @@ export default function ResponsiveTable() {
 					{allBudgetItems.length !== 0 ? (
 						<thead className='budget-table-thead'>
 							<tr className='budget-table-tr budget-table-tr-1st'>
-								<th className='budget-table-td table-bold'>Name & Type</th>
+								<th className='budget-table-td table-bold'>Name/Type</th>
 								<th className='budget-table-td table-bold'>Date</th>
 								<th className='budget-table-td table-bold'>Amount</th>
 								<th className='budget-table-td table-bold'>Options</th>
