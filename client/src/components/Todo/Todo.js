@@ -89,10 +89,10 @@ export default function Todo() {
 										<button
 											onClick={e => handleEdit(e, todo, editing, setEditing)}
 											style={{ border: 'none', background: 'none' }}>
-											✏️
+											{'✏️'}
 										</button>
 										<button onClick={e => handleDelete(e, todo, fetchAfterDelete)} style={{ border: 'none', background: 'none' }}>
-											🗑️
+											{'🗑️'}
 										</button>
 									</li>
 								);

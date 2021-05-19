@@ -1,0 +1,105 @@
+/******************************************************************************************/
+/******************************************************************************************/
+/* TIMER */
+/******************************************************************************************/
+/******************************************************************************************/
+
+.timer {
+	display: flex;
+	justify-content: space-around;
+	padding: 2rem;
+}
+
+.countdown-input {
+	margin: 1rem 0.5rem;
+	padding: 0.25rem;
+	width: 100px;
+	border: 1px solid;
+}
+
+.countdown-buttons {
+	display: flex;
+	justify-content: space-around;
+}
+
+.countdown-timer {
+	font-size: 18px;
+}
+
+.countdown-clock {
+	font-size: 2.5rem;
+}
+
+.form-inputs {
+	display: flex;
+}
+
+.countdown,
+.stopwatch {
+	width: 90vw;
+	height: 35vh;
+	justify-content: center;
+	margin-bottom: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #bff0ff;
+	box-shadow: 0 3px 6px rgb(12, 12, 12);
+}
+
+.countdown-header,
+.stopwatch-header {
+	font-size: 3rem;
+}
+
+.stopwatch-header {
+	margin-bottom: 1rem;
+}
+.stopwatch-labels {
+	font-size: 2.5rem;
+}
+
+.stopwatch-time {
+	text-align: center;
+	font-size: 20px;
+	font-size: 2.5rem;
+}
+
+.stopwatch-buttons {
+	margin-top: 1rem;
+	text-align: center;
+}
+
+.stopwatch-btn {
+	margin-left: 0.5rem;
+}
+
+/******************************************************************************************/
+/******************************************************************************************/
+/* MEDIA QUERIES */
+/******************************************************************************************/
+/******************************************************************************************/
+
+@media (min-width: 250px) and (max-width: 600px) {
+	.countdown-header,
+	.stopwatch-header {
+		font-size: 2.5rem;
+	}
+
+	.stopwatch-btn-1 {
+		font-size: 0.8rem !important;
+	}
+
+	.countdown-input {
+		width: 75px;
+	}
+
+	.countdown-clock {
+		font-size: 1.75rem;
+	}
+
+	.stopwatch-time,
+	.stopwatch-labels {
+		font-size: 1.75rem;
+	}
+}

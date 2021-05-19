@@ -196,12 +196,12 @@ export default function ResponsiveTable() {
 												<button
 													style={{ border: 'none', background: 'none', marginRight: '.5rem' }}
 													onClick={e => toggleEdit(e, item)}>
-													✏️
+													{'✏️'}
 												</button>
 												<button
 													style={{ border: 'none', background: 'none'}}
 													onClick={event => handleDelete(event, item, handleUpdateAfterDelete)}>
-													🗑️
+													 {'🗑️'}
 												</button>
 											</td>
 										</tr>
