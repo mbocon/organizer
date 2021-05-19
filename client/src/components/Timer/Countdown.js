@@ -93,11 +93,11 @@ export default function Countdown() {
 					{hours} hrs {minutes} min {seconds} sec
 				</div>
 				<div className='stopwatch-buttons'>
-					<button className='btn btn-success stopwatch-btn-1' onClick={handlePause}>
+					<button className='btn btn-primary stopwatch-btn-1' onClick={handlePause}>
 						{startTimer ? 'Pause' : 'Start'}
 					</button>
 
-					<button className='btn btn-danger stopwatch-btn stopwatch-btn-1' onClick={handleReset}>
+					<button className='btn btn-secondary stopwatch-btn stopwatch-btn-1' onClick={handleReset}>
 						Reset
 					</button>
 				</div>

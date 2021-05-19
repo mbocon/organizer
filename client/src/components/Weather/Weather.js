@@ -20,8 +20,6 @@ export default function Weather() {
 		setSearch(e.target.value);
 	};
 
-	console.log(weather, 'is my api  resp')
-
 	return (
 		<div className='weather'>
 			<h3>Check the weather</h3>

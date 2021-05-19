@@ -46,10 +46,10 @@ export default function Stopwatch() {
 				{hours} : {minutes} : {seconds}
 			</div>
 			<div className='stopwatch-buttons'>
-				<button className={`btn btn-success stopwatch-btn-1`} onClick={toggle}>
+				<button className={`btn btn-primary stopwatch-btn-1`} onClick={toggle}>
 					{isActive ? 'Pause' : 'Start'}
 				</button>
-				<button className='btn  btn-danger stopwatch-btn stopwatch-btn-1' onClick={reset}>
+				<button className='btn  btn-secondary stopwatch-btn stopwatch-btn-1' onClick={reset}>
 					Reset
 				</button>
 			</div>

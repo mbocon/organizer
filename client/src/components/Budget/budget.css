@@ -30,6 +30,10 @@
 	height: 2.5rem
 }
 
+.budget-submit-btn {
+	margin-left: 5px;
+}
+
 .budget-delete-btn {
 	padding: 0.1rem 0.5rem !important;
 	margin-top: -0.25rem;

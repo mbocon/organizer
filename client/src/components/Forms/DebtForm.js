@@ -29,6 +29,7 @@ const DebtForm = props => {
 					onChange={handleChange}
 					onFocus={e => clickedSource(e)}
 					placeholder='Owed to'
+					autoFocus
 					required
 				/>
 				<input
@@ -52,10 +53,10 @@ const DebtForm = props => {
 				/>
 				<input type='text' name='type' id='type' onChange={handleChange} value='debt' style={{ display: 'none' }} />
 
-				<button className='btn btn-success budget-submit-btn' type='submit'>
+				<button className='btn btn-primary budget-submit-btn' type='submit'>
 					Submit
 				</button>
-				<button onClick={event => handleCancel(event, props)} className='btn btn-danger budget-cancel-btn'>
+				<button onClick={event => handleCancel(event, props)} className='btn btn-secondary budget-cancel-btn'>
 					Cancel
 				</button>
 			</form>

@@ -28,6 +28,7 @@ export default function EditBudget({ editing, setEditing, itemToEdit }) {
 					onChange={handleChange}
 					onFocus={e => clickedSource(e)}
 					placeholder={itemToEdit.name}
+					autoFocus
 					required
 				/>
 				<input
@@ -49,10 +50,10 @@ export default function EditBudget({ editing, setEditing, itemToEdit }) {
 					placeholder={itemToEdit.value}
 					required
 				/>
-				<button className='btn btn-success budget-submit-btn' type='submit' style={{ marginLeft: '5px' }}>
+				<button className='btn btn-primary budget-submit-btn' type='submit' style={{ marginLeft: '5px' }}>
 					Submit
 				</button>
-				<button className='btn btn-danger budget-submit-btn edit-cancel-btn' onClick={() => setEditing(!editing)}>
+				<button className='btn btn-secondary budget-submit-btn edit-cancel-btn' onClick={() => setEditing(!editing)}>
 					Cancel
 				</button>
 			</form>

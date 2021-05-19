@@ -1,8 +1,9 @@
 import { useState } from 'react';
 
-const useTodo = (callback) => {
+const useTodo = callback => {
 	const [inputs, setInputs] = useState({});
 	const [updatedItem, setUpdatedItem] = useState([]);
+
 	const handleSubmit = (event, props) => {
 		if (event) {
 			event.preventDefault();

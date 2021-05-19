@@ -24,6 +24,7 @@ const IncomeForm = props => {
 					onChange={handleChange}
 					onFocus={e => clickedSource(e)}
 					placeholder='Income source'
+					autoFocus
 					required
 				/>
 				<input
@@ -47,10 +48,10 @@ const IncomeForm = props => {
 				/>
 				<input type='text' name='type' id='type' defaultValue='income' style={{ display: 'none' }} />
 
-				<button className='btn btn-success budget-submit-btn' type='submit'>
+				<button className='btn btn-primary budget-submit-btn' type='submit'>
 					Submit
 				</button>
-				<button onClick={event => handleCancel(event, props)} className='btn btn-danger budget-cancel-btn'>
+				<button onClick={event => handleCancel(event, props)} className='btn btn-secondary budget-cancel-btn'>
 					Cancel
 				</button>
 			</form>

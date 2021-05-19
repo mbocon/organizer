@@ -55,6 +55,16 @@ main {
 	background-color: var(--main-cyan);
 }
 
+.landing h1 {
+	font-weight: bold;
+	margin-top: 1rem;
+}
+
+.landing p, .home-info p {
+	line-height: 1.5rem;
+	letter-spacing: 1px;
+}
+
 .current-user {
 	font-style: oblique;
 }
@@ -111,12 +121,15 @@ button.navbar-toggler {
 
 .home-intro-h2 {
 	font-weight: bold;
+	font-size: 1.75rem;
 }
 
 .home-intro-p {
 	text-align: left;
 	width: 80%;
 	margin: 1rem auto;
+	letter-spacing: 1px;
+	line-height: 1.5rem;
 }
 
 .dropdown-item {
@@ -298,9 +311,7 @@ div.ml-auto.navbar.nav {
 	.btn {
 		font-size: 0.8rem !important;
 	}
-	.home-intro-h2 {
-		font-size: 1.5rem;
-	}
+
 	.home-info {
 		margin-top: 1rem;
 	}
@@ -379,9 +390,6 @@ div.ml-auto.navbar.nav {
 		width: 75px;
 	}
 
-	.home-intro-h2 {
-		font-size: 1.25rem;
-	}
 	.home-info {
 		margin-top: 1rem;
 	}
@@ -404,7 +412,7 @@ div.ml-auto.navbar.nav {
 	}
 	.budget-submit-btn,
 	.budget-cancel-btn {
-		height: 2.2rem!important;
+		height: 2rem!important;
 	}
 	.todo-deadline-h6 {
 		padding-left: 4rem!important;
