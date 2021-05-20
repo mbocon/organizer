@@ -71,19 +71,46 @@
     text-align: left;
     width: 80%;
     margin: 1rem auto;
-    letter-spacing: 1px;
-    line-height: 2rem;
-}
-
-.journal-go-back-btn {
-    display: flex;
-    flex-direction: column;
-}
-
-.go-back-btn {
-    margin-top: 1rem;
+    letter-spacing: .25px;
+    line-height: 1.5rem;
+    flex-grow: 1;
 }
 
 .journal-back-to-top-btn {
-    padding-bottom: 5rem;
+    position: absolute;
+    bottom: 3.5rem;
+    right: 1rem;
+    
+}
+
+.journal-edit-btn {
+    position: relative;
+    right: 10px;
+}
+
+.journal-dlt-btn {
+    position: relative;
+    left: 10px;
+}
+
+@media (min-width: 250px) and (max-width: 600px) {
+	.journal-edit-btn {
+        position: relative;
+        right: 5px;
+    }
+    
+    .journal-dlt-btn {
+        position: relative;
+        left: 5px;
+    }
+}
+
+
+.edit-cancel {
+    text-align: center;
+}
+
+.journal-edit-submit{
+    width: 40%;
+    margin: 1rem auto;
 }

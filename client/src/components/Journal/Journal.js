@@ -6,8 +6,6 @@ import './journal.css';
 export default function Journal() {
 	const [create, setCreate] = useState(false);
 	const [allJournals, setAllJournals] = useState([]);
-	const [editing, setEditing] = useState(false);
-	const [itemToEdit, setItemToEdit] = useState([]);
 	const [newJournal, setNewJournal] = useState(false);
 	const [deleted, setDeleted] = useState(false);
 	const [newUpdate, setNewUpdate] = useState(false);
@@ -127,7 +125,7 @@ export default function Journal() {
 			{allJournals.length ? (
 				<div>
 					{create ? null : (
-						<AllJournals allJournals={allJournals} handleDelete={handleDelete} fetchAfterDelete={fetchAfterDelete} />
+						<AllJournals allJournals={allJournals} handleDelete={handleDelete} fetchAfterDelete={fetchAfterDelete} newUpdate={newUpdate} setNewUpdate={setNewUpdate} />
 					)}
 				</div>
 			) : null}

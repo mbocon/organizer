@@ -41,7 +41,7 @@ export default function Countdown() {
 			clearInterval(interval);
 		}
 		return () => clearInterval(interval);
-	}, [startTimer, seconds, minutes, hours]);
+	}, [startTimer, seconds, minutes, hours, audioPlayer]);
 
 	const handleChange = e => {
 		if (e.target.name === 'hours') setHours(e.target.value);
