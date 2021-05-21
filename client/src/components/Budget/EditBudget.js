@@ -32,22 +32,23 @@ export default function EditBudget({ editing, setEditing, itemToEdit }) {
 					required
 				/>
 				<input
+					type='number'
+					name='value'
+					id='value'
+					onFocus={e => clickedAmount(e)}
+					onChange={handleChange}
+					disabled={editedSource ? false : true}
+					placeholder={itemToEdit.value}
+					required
+				/>
+				<input
 					type='date'
 					name='date'
 					id='date'
 					onChange={handleChange}
 					onFocus={e => clickedAmount(e)}
-					disabled={editedSource ? false : true}
-					placeholder={itemToEdit.date}
-					required
-				/>
-				<input
-					type='number'
-					name='value'
-					id='value'
-					onChange={handleChange}
 					disabled={editedAmount ? false : true}
-					placeholder={itemToEdit.value}
+					placeholder={itemToEdit.date}
 					required
 				/>
 				<button className='btn btn-primary budget-submit-btn' type='submit' style={{ marginLeft: '5px' }}>

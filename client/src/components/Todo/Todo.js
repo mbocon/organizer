@@ -3,6 +3,18 @@ import TodoForm from '../Forms/TodoForm';
 import useTodo from '../CustomHooks/useTodo';
 import './todo.css';
 
+let href = window.location.href;
+
+let API_URL;
+
+if(href.includes('localhost')) {
+	API_URL = 'http://localhost:4000';
+} else {
+	API_URL = 'https://organizer-server-api.herokuapp.com';
+}
+
+let user = localStorage.getItem('user');
+
 export default function Todo() {
 	let [allTodos, setAllTodos] = useState([]);
 	let [editing, setEditing] = useState(false);
@@ -18,26 +30,26 @@ export default function Todo() {
 	const { handleDelete, handleEdit, handleUpdate, handleChange } = useTodo(editCallback);
 
 	useEffect(() => {
-		fetch(`http://localhost:4000/api/todos/${localStorage._id}/getTodos`)
+		fetch(`${API_URL}/api/todos/${localStorage._id}/getTodos`)
 			.then(response => response.json())
 			.then(json => setAllTodos(json));
 	}, []);
 
 	useEffect(() => {
 		if (newTodo) {
-			fetch(`http://localhost:4000/api/todos/${localStorage._id}/getTodos`)
+			fetch(`${API_URL}/api/todos/${localStorage._id}/getTodos`)
 				.then(response => response.json())
 				.then(json => setAllTodos(json))
 				.then(setNewTodo(false));
 		}
 		if (deleted) {
-			fetch(`http://localhost:4000/api/todos/${localStorage._id}/getTodos`)
+			fetch(`${API_URL}/api/todos/${localStorage._id}/getTodos`)
 				.then(response => response.json())
 				.then(json => setAllTodos(json))
 				.then(setDeleted(false));
 		}
 		if (newUpdate) {
-			fetch(`http://localhost:4000/api/todos/${localStorage._id}/getTodos`)
+			fetch(`${API_URL}/api/todos/${localStorage._id}/getTodos`)
 				.then(response => response.json())
 				.then(json => setAllTodos(json))
 				.then(setNewUpdate(false));
@@ -103,7 +115,15 @@ export default function Todo() {
 				<div className='form edit-form'>
 					<h5 className='edit-form-h5'>Editing {itemToEdit.task}</h5>
 					<form className='todo-form' onSubmit={event => handleUpdate(event, fetchAfterUpdate)}>
-						<input type='text' name='task' id='task' onChange={handleChange} placeholder={itemToEdit.task} autoFocus required />
+						<input
+							type='text'
+							name='task'
+							id='task'
+							onChange={handleChange}
+							placeholder={itemToEdit.task}
+							autoFocus
+							required
+						/>
 						<input type='date' name='date' id='date' onChange={handleChange} placeholder={itemToEdit.date} required />
 						<button className='btn btn-primary budget-submit-btn' type='submit'>
 							Submit

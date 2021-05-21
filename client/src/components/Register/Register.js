@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import './register.css';
 
-let url;
-if (process.env.NODE_ENV === 'development') {
-	url = 'http://localhost:4000/';
+let href = window.location.href;
+
+let API_URL;
+let CLIENT_URL;
+
+if (href.includes('localhost')) {
+	API_URL = 'http://localhost:4000';
+	CLIENT_URL = 'http://localhost:3000';
 } else {
-	url = '/';
+	API_URL = 'https://organizer-server-api.herokuapp.com';
+	CLIENT_URL = 'https://organizer-client.herokuapp.com';
 }
 
 const Register = () => {
@@ -17,12 +23,11 @@ const Register = () => {
 		if (e.target.id === 'name') setName(e.target.value);
 		if (e.target.id === 'email') setEmail(e.target.value);
 		if (e.target.id === 'password') setPassword(e.target.value);
-		console.log(email, password, name);
 	};
 
 	const handleSumbit = e => {
 		e.preventDefault();
-		fetch(`${url}api/users/register`, {
+		fetch(`${API_URL}/api/users/register`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -38,7 +43,7 @@ const Register = () => {
 			.then(data => {
 				console.log(data, 'from reg res');
 			})
-			.then((window.location.href = 'http://localhost:3000/login'))
+			.then((window.location.href = `${CLIENT_URL}/login`))
 			.catch(err => console.error(err, 'is error'));
 	};
 	return (
@@ -49,9 +54,10 @@ const Register = () => {
 					<div className='form-group'>
 						<label htmlFor='name'>Username</label>
 						<input
-							type='name'
+							type='text'
 							className='form-control'
 							id='name'
+							name='name'
 							aria-describedby='nameHelp'
 							placeholder='Create username'
 							onChange={handleChange}
@@ -61,6 +67,7 @@ const Register = () => {
 							type='email'
 							className='form-control'
 							id='email'
+							name='email'
 							aria-describedby='emailHelp'
 							placeholder='example@email.com'
 							onChange={handleChange}
@@ -68,7 +75,14 @@ const Register = () => {
 					</div>
 					<div className='form-group'>
 						<label htmlFor='password'>Password</label>
-						<input type='password' className='form-control' id='password' placeholder='*******' onChange={handleChange} />
+						<input
+							type='password'
+							name='password'
+							className='form-control'
+							id='password'
+							placeholder='*******'
+							onChange={handleChange}
+						/>
 					</div>
 				</fieldset>
 				<button className='btn btn-success'>Register</button>

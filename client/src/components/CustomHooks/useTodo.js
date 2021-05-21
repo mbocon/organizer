@@ -1,5 +1,15 @@
 import { useState } from 'react';
 
+let href = window.location.href;
+
+let API_URL;
+
+if(href.includes('localhost')) {
+	API_URL = 'http://localhost:4000';
+} else {
+	API_URL = 'https://organizer-server-api.herokuapp.com';
+}
+
 const useTodo = callback => {
 	const [inputs, setInputs] = useState({});
 	const [updatedItem, setUpdatedItem] = useState([]);
@@ -16,7 +26,7 @@ const useTodo = callback => {
 				date: inputs.date,
 			};
 
-			fetch(`http://localhost:4000/api/todos/create`, {
+			fetch(`${API_URL}/api/todos/create`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -35,7 +45,7 @@ const useTodo = callback => {
 
 	const handleDelete = (event, todo, fetchAfterDelete) => {
 		if (event) {
-			fetch(`http://localhost:4000/api/todos/delete/${todo.user}/${todo._id}`, {
+			fetch(`${API_URL}/api/todos/delete/${todo.user}/${todo._id}`, {
 				method: 'DELETE',
 				headers: {
 					'Content-Type': 'application/json',
@@ -73,7 +83,7 @@ const useTodo = callback => {
 				date: inputs.date,
 			};
 
-			fetch(`http://localhost:4000/api/todos/${localStorage._id}/${updatedItem._id}`, {
+			fetch(`${API_URL}/api/todos/${localStorage._id}/${updatedItem._id}`, {
 				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json',

@@ -10,7 +10,7 @@ export default function Weather() {
 		const form = e.target;
 		form.reset();
 		fetch(
-			`http://api.openweathermap.org/data/2.5/weather?q=${search}&units=imperial&appid=be853936af64e10c7ae809463ba68499`,
+			`https://api.openweathermap.org/data/2.5/weather?q=${search}&units=imperial&appid=be853936af64e10c7ae809463ba68499`,
 		)
 			.then(response => response.json())
 			.then(json => setWeather(json));

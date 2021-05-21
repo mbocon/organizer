@@ -1,5 +1,15 @@
 import { useState } from 'react';
 
+let href = window.location.href;
+
+let API_URL;
+
+if(href.includes('localhost')) {
+	API_URL = 'http://localhost:4000';
+} else {
+	API_URL = 'https://organizer-server-api.herokuapp.com';
+}
+
 const useJournal = callback => {
 	const [inputs, setInputs] = useState({});
 
@@ -14,9 +24,7 @@ const useJournal = callback => {
                 title: inputs.title
 			};
 
-			console.log(data, 'is data to submit to CREATE NEW JOURNAL');
-
-			fetch(`http://localhost:4000/api/journals/create`, {
+			fetch(`${API_URL}/api/journals/create`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -36,7 +44,7 @@ const useJournal = callback => {
 
 	const handleDelete = (event, journal, fetchAfterDelete) => {
 		if (event) {
-			fetch(`http://localhost:4000/api/journals/delete/${journal.user}/${journal._id}`, {
+			fetch(`${API_URL}/api/journals/delete/${journal.user}/${journal._id}`, {
 				method: 'DELETE',
 				headers: {
 					'Content-Type': 'application/json',
@@ -54,7 +62,6 @@ const useJournal = callback => {
 	const handleChange = event => {
 		event.preventDefault();
 		setInputs(inputs => ({ ...inputs, [event.target.id]: event.target.value }));
-		console.log(inputs, 'are my on change JOURNAL INPUTS!!!');
 	};
 
 
@@ -70,9 +77,7 @@ const useJournal = callback => {
                 title: inputs.title
 			};
 
-            console.log(data, 'is data to update', localStorage , 'is localstorage')
-
-			fetch(`http://localhost:4000/api/journals/${localStorage._id}/${localStorage.journalId}`, {
+			fetch(`${API_URL}/api/journals/${localStorage._id}/${localStorage.journalId}`, {
 				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json',

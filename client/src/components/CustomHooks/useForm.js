@@ -1,5 +1,15 @@
 import { useState } from 'react';
 
+let href = window.location.href;
+
+let API_URL;
+
+if(href.includes('localhost')) {
+	API_URL = 'http://localhost:4000';
+} else {
+	API_URL = 'https://organizer-server-api.herokuapp.com';
+}
+
 const useForm = () => {
 	const [inputs, setInputs] = useState({});
 
@@ -22,7 +32,7 @@ const useForm = () => {
 				date: formattedInputs[2].value,
 			};
 
-			fetch(`http://localhost:4000/api/budgets/create`, {
+			fetch(`${API_URL}/api/budgets/create`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -55,17 +65,17 @@ const useForm = () => {
 			const formattedInputs = [];
 			Object.entries(inputs).forEach(([key, value]) => formattedInputs.push({ type: key, value: value }));
 			let form = event.target;
-			let value = formattedInputs[2].value;
+			let value = formattedInputs[1].value;
 			let formattedValue = value.replace(/[, ]+/g, '').trim();
 			let data = {
 				user: localStorage._id,
 				type: localStorage.itemType,
 				name: formattedInputs[0].value,
 				value: formattedValue,
-				date: formattedInputs[1].value,
+				date: formattedInputs[2].value,
 			};
 
-			fetch(`http://localhost:4000/api/budgets/${localStorage.itemId}/update`, {
+			fetch(`${API_URL}/api/budgets/${localStorage.itemId}/update`, {
 				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json',

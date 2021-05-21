@@ -7,7 +7,7 @@ export default function Navigation(props) {
 
 	const handleLogout = () => {
 		localStorage.clear();
-		window.location.href = 'http://localhost:3000/login';
+		window.location.href = 'https://organizer-client.herokuapp.com/login';
 	};
 
 	return (

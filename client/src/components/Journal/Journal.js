@@ -3,6 +3,16 @@ import useJournal from '../CustomHooks/useJournal';
 import AllJournals from './AllJournals';
 import './journal.css';
 
+let href = window.location.href;
+
+let API_URL;
+
+if(href.includes('localhost')) {
+	API_URL = 'http://localhost:4000';
+} else {
+	API_URL = 'https://organizer-server-api.herokuapp.com';
+}
+
 export default function Journal() {
 	const [create, setCreate] = useState(false);
 	const [allJournals, setAllJournals] = useState([]);
@@ -13,7 +23,7 @@ export default function Journal() {
 	const { handleChange, handleSubmit, handleDelete } = useJournal();
 
 	useEffect(() => {
-		fetch(`http://localhost:4000/api/journals/${localStorage._id}/getJournals`)
+		fetch(`${API_URL}/api/journals/${localStorage._id}/getJournals`)
 			.then(response => response.json())
 			.then(json => {
 				json.forEach(journal => {
@@ -30,7 +40,7 @@ export default function Journal() {
 
 	useEffect(() => {
 		if (newJournal) {
-			fetch(`http://localhost:4000/api/journals/${localStorage._id}/getJournals`)
+			fetch(`${API_URL}/api/journals/${localStorage._id}/getJournals`)
 				.then(response => response.json())
 				.then(json => {
 					json.forEach(journal => {
@@ -46,7 +56,7 @@ export default function Journal() {
 				.then(setNewJournal(false));
 		}
 		if (deleted) {
-			fetch(`http://localhost:4000/api/journals/${localStorage._id}/getJournals`)
+			fetch(`${API_URL}/api/journals/${localStorage._id}/getJournals`)
 				.then(response => response.json())
 				.then(json => {
 					json.forEach(journal => {
@@ -62,7 +72,7 @@ export default function Journal() {
 				.then(setDeleted(false));
 		}
 		if (newUpdate) {
-			fetch(`http://localhost:4000/api/journals/${localStorage._id}/getJournals`)
+			fetch(`${API_URL}/api/journals/${localStorage._id}/getJournals`)
 				.then(response => response.json())
 				.then(json => {
 					json.forEach(journal => {

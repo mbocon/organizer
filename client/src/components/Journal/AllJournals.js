@@ -122,6 +122,3 @@ export default function AllJournals({ allJournals, handleDelete, fetchAfterDelet
 	);
 }
 
-{
-	/* <small> created on {journal.createdAt}</small> */
-}

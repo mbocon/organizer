@@ -2,11 +2,17 @@ import React, { useState } from 'react';
 import Spinner from '../Spinner/Spinner';
 import './login.css';
 
-let url;
-if (process.env.NODE_ENV === 'development') {
-	url = 'http://localhost:4000/';
+let href = window.location.href;
+
+let API_URL;
+let CLIENT_URL;
+
+if(href.includes('localhost')) {
+	API_URL = 'http://localhost:4000';
+	CLIENT_URL = 'http://localhost:3000';
 } else {
-	url = '/';
+	API_URL = 'https://organizer-server-api.herokuapp.com';
+	CLIENT_URL = 'https://organizer-client.herokuapp.com';
 }
 
 const Login = props => {
@@ -16,7 +22,6 @@ const Login = props => {
 	const [errorMsg, setErrorMsg] = useState('');
 	const [authSuccess, setAuthSuccess] = useState(false);
 	const [successMsg, setSuccessMsg] = useState('');
-	// const [user, setUser] = useState({});
 
 	const handleChange = e => {
 		if (e.target.id === 'email') setEmail(e.target.value);
@@ -26,7 +31,7 @@ const Login = props => {
 
 	const handleSumbit = e => {
 		e.preventDefault();
-		fetch(`${url}api/users/login`, {
+		fetch(`${API_URL}/api/users/login`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -51,7 +56,7 @@ const Login = props => {
 					localStorage.setItem('created', true);
 					console.log(response, 'is resp');
 					setTimeout(() => {
-						window.location.href = 'http://localhost:3000/home';
+						window.location.href = `${CLIENT_URL}/home`;
 					}, 1000);
 				}
 			})
@@ -82,6 +87,7 @@ const Login = props => {
 							type='email'
 							className='form-control'
 							id='email'
+							name='email'
 							aria-describedby='emailHelp'
 							placeholder='example@email.com'
 							onChange={handleChange}
@@ -89,13 +95,7 @@ const Login = props => {
 					</div>
 					<div className='form-group'>
 						<label htmlFor='password'>Password</label>
-						<input
-							type='password'
-							className='form-control'
-							id='password'
-							placeholder='*******'
-							onChange={handleChange}
-						/>
+						<input type='password' name='password' className='form-control' id='password' placeholder='*******' onChange={handleChange} />
 					</div>
 				</fieldset>
 				<button className='btn btn-success'>Login</button>

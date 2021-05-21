@@ -5,6 +5,16 @@ import './budget.css';
 import useDelete from '../CustomHooks/useDelete';
 import EditBudget from './EditBudget';
 
+let href = window.location.href;
+
+let API_URL;
+
+if(href.includes('localhost')) {
+	API_URL = 'http://localhost:4000';
+} else {
+	API_URL = 'https://organizer-server-api.herokuapp.com';
+}
+
 export default function ResponsiveTable() {
 	let [, setState] = useState();
 	const [allBudgetItems, setAllBudgetItems] = useState([]);
@@ -30,7 +40,7 @@ export default function ResponsiveTable() {
 		savingsRef.current = savingsRef.current - savingsRef.current;
 		leftoverRef.current = leftoverRef.current - leftoverRef.current;
 
-		fetch(`http://localhost:4000/api/budgets/${localStorage._id}/getBudgets`)
+		fetch(`${API_URL}/api/budgets/${localStorage._id}/getBudgets`)
 			.then(response => response.json())
 			.then(json => {
 				console.log(json,' is  my json objs', localStorage._id, 'is my localstorage id')
@@ -54,7 +64,7 @@ export default function ResponsiveTable() {
 			savingsRef.current = savingsRef.current - savingsRef.current;
 			leftoverRef.current = leftoverRef.current - leftoverRef.current;
 
-			fetch(`http://localhost:4000/api/budgets/${localStorage._id}/getBudgets`)
+			fetch(`${API_URL}/api/budgets/${localStorage._id}/getBudgets`)
 				.then(response => response.json())
 				.then(json => {
 					json.forEach(item => {
@@ -79,7 +89,7 @@ export default function ResponsiveTable() {
 			savingsRef.current = savingsRef.current - savingsRef.current;
 			leftoverRef.current = leftoverRef.current - leftoverRef.current;
 
-			fetch(`http://localhost:4000/api/budgets/${localStorage._id}/getBudgets`)
+			fetch(`${API_URL}/api/budgets/${localStorage._id}/getBudgets`)
 				.then(response => response.json())
 				.then(json => {
 					setIncome(0);

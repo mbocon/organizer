@@ -402,7 +402,7 @@ div.ml-auto.navbar.nav {
 		font-size: 5vmin !important;
 	}
 	:is(#income, #expense, #debt, #savings, #value, #date, #task) {
-		width: 40%;
+		width: 45%;
 	}
 	.todo-date {
 		width: 30%;
